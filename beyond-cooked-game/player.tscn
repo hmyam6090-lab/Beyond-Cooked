@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://mvo80e0r2be2"]
+
+[ext_resource type="Script" uid="uid://bt58swhsu8pqs" path="res://player_movement.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bvrd16fplgtn0" path="res://Assets/PlayerCharacter/repo_demo.glb" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
+radius = 0.3
+height = 1.5
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("2_i3pqv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7782316, 0)
+shape = SubResource("CapsuleShape3D_hqtel")
