@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://mvo80e0r2be2"]
+
+[ext_resource type="Script" uid="uid://bcfge2hh62xeu" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bvrd16fplgtn0" path="res://Assets/PlayerCharacter/repo_demo.glb" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
+radius = 0.3
+height = 1.5
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_onrkg")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("2_i3pqv")]
+transform = Transform3D(-0.9659258, 0, -0.25881895, 0, 1, 0, 0.25881895, 0, -0.9659258, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7782316, 0)
+shape = SubResource("CapsuleShape3D_hqtel")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25038, -0.2912409)
+
+[node name="InteractRay" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 3
+
+[node name="GroundRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, -0.1, 0)

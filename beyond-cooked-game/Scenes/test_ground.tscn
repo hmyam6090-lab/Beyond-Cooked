@@ -1,9 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj8aix68apwc2"]
+[gd_scene load_steps=13 format=3 uid="uid://cj8aix68apwc2"]
 
-[ext_resource type="PackedScene" uid="uid://mvo80e0r2be2" path="res://player.tscn" id="1_quavu"]
-[ext_resource type="Script" uid="uid://be1pfwy4fhnp2" path="res://Scenes/test_ground.gd" id="1_x1xgk"]
-[ext_resource type="PackedScene" uid="uid://dwoemyx8odaut" path="res://appliance.tscn" id="2_6h2m2"]
-[ext_resource type="PackedScene" uid="uid://ba15x2fvajugw" path="res://Assets/CookingAppliances/sink.glb" id="3_i6jhg"]
+[ext_resource type="PackedScene" uid="uid://mvo80e0r2be2" path="res://Scenes/player.tscn" id="1_quavu"]
+[ext_resource type="Script" uid="uid://be1pfwy4fhnp2" path="res://Scripts/test_ground.gd" id="1_x1xgk"]
+[ext_resource type="PackedScene" uid="uid://0jh66jscfiiu" path="res://Scenes/Scenery/rocket.tscn" id="3_i6jhg"]
+[ext_resource type="PackedScene" uid="uid://basb18mtsg20s" path="res://Assets/glb_model/stairs.glb" id="4_x1xgk"]
+[ext_resource type="PackedScene" uid="uid://ce5c0gpahdbkr" path="res://Scenes/Scenery/ui.tscn" id="5_lbatl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x1xgk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_lbatl"]
+sky_material = SubResource("ProceduralSkyMaterial_x1xgk")
+
+[sub_resource type="Environment" id="Environment_2heq8"]
+background_mode = 2
+sky = SubResource("Sky_lbatl")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_il4dt"]
 size = Vector3(60, 2, 60)
@@ -11,8 +25,18 @@ size = Vector3(60, 2, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_mbbig"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1xgk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lbatl"]
+
 [node name="Test Ground" type="Node3D"]
 script = ExtResource("1_x1xgk")
+
+[node name="UI" parent="." instance=ExtResource("5_lbatl")]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2heq8")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -23,19 +47,39 @@ shape = SubResource("BoxShape3D_il4dt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_mbbig")
 
+[node name="Player" parent="." instance=ExtResource("1_quavu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.8660254, 0, -0.5, 0.5, -4.371139e-08, 0.8660254, -2.1855694e-08, -1, -3.7855173e-08, 0, 10, 2)
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_quavu")]
+[node name="Rocket" parent="." instance=ExtResource("3_i6jhg")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, -0.297441, -9)
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="stairs" parent="." instance=ExtResource("4_x1xgk")]
+transform = Transform3D(-1.5298985e-08, 0, 0.35, 0, 0.4, 0, -0.35, 0, -1.5298985e-08, -3.5008986, -0.04982406, -1.0377698)
 
-[node name="Camera3D" type="Camera3D" parent="Marker3D"]
-transform = Transform3D(0.97580624, 0.10937145, -0.18931481, 0, 0.86588573, 0.5002418, 0.21863717, -0.4881391, 0.8449367, -0.2100985, 2, 2.5888522)
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["pickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mass = 10.0
+angular_damp = 0.5
 
-[node name="Appliance" parent="." instance=ExtResource("2_6h2m2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07387233, -3)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_x1xgk")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_i6jhg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8400998, 0.26383364, -3.007228)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_lbatl")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="RigidBody3D" groups=["pickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
+mass = 10.0
+angular_damp = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_x1xgk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_lbatl")
