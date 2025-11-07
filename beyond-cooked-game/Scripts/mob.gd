@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var min_speed = 10
-@export var max_speed = 60
+@export var max_speed = 100
 
 func _physics_process(_delta):
 	move_and_slide()
