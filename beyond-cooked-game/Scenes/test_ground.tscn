@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj8aix68apwc2"]
+[gd_scene load_steps=12 format=3 uid="uid://cj8aix68apwc2"]
 
 [ext_resource type="PackedScene" uid="uid://mvo80e0r2be2" path="res://Scenes/player.tscn" id="1_quavu"]
-[ext_resource type="Script" uid="uid://be1pfwy4fhnp2" path="res://Scripts/test_ground.gd" id="1_x1xgk"]
 [ext_resource type="PackedScene" uid="uid://0jh66jscfiiu" path="res://Scenes/Scenery/rocket.tscn" id="3_i6jhg"]
 [ext_resource type="PackedScene" uid="uid://basb18mtsg20s" path="res://Assets/glb_model/stairs.glb" id="4_x1xgk"]
 [ext_resource type="PackedScene" uid="uid://s01smbi8t2p6" path="res://Assets/Prefab/testcube.tscn" id="5_lbatl"]
@@ -29,7 +28,6 @@ size = Vector3(60, 2, 60)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lbatl"]
 
 [node name="Test Ground" type="Node3D"]
-script = ExtResource("1_x1xgk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2heq8")
@@ -41,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_il4dt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8438072, -0.0018026829, -11.226498)
 mesh = SubResource("BoxMesh_mbbig")
 
 [node name="Player" parent="." instance=ExtResource("1_quavu")]
@@ -58,9 +57,9 @@ transform = Transform3D(-1.5298985e-08, 0, 0.35, 0, 0.4, 0, -0.35, 0, -1.5298985
 
 [node name="ItemTestCube2" parent="." instance=ExtResource("5_lbatl")]
 
-[node name="cheese" parent="." instance=ExtResource("6_2heq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.98139775, 2)
-
 [node name="ItemTestCube3" parent="." instance=ExtResource("5_lbatl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_lbatl")
+
+[node name="RigidBody3D" parent="ItemTestCube3" instance=ExtResource("6_2heq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4826672)
