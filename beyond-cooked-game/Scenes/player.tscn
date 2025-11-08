@@ -1,14 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://mvo80e0r2be2"]
+[gd_scene load_steps=13 format=3 uid="uid://mvo80e0r2be2"]
 
 [ext_resource type="Script" uid="uid://bcfge2hh62xeu" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bvrd16fplgtn0" path="res://Assets/PlayerCharacter/repo_demo.glb" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://bkuckaa2ukp15" path="res://Inventory/PlayerInteractionHandler.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="4_fkybt"]
+[ext_resource type="PackedScene" uid="uid://s01smbi8t2p6" path="res://Assets/Prefab/testcube.tscn" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://blsfyxrp6mv72" path="res://Assets/UI/BoxIcon.png" id="5_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://ce5c0gpahdbkr" path="res://Scenes/Scenery/ui.tscn" id="7_3smsa"]
+[ext_resource type="PackedScene" uid="uid://due6jvu3mtonp" path="res://Scenes/Scenery/cheese.tscn" id="8_8erm5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
 radius = 0.3
 height = 1.5
 
+[sub_resource type="Resource" id="Resource_x3wgy"]
+script = ExtResource("4_fkybt")
+ItemName = "Test_Cube"
+Icon = ExtResource("5_x3wgy")
+ItemModelPrefab = ExtResource("5_fkybt")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_3smsa"]
+script = ExtResource("4_fkybt")
+ItemName = "cheese"
+Icon = ExtResource("5_x3wgy")
+ItemModelPrefab = ExtResource("8_8erm5")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_onrkg")
+
+[node name="UI" parent="." instance=ExtResource("7_3smsa")]
+mouse_filter = 2
 
 [node name="Pivot" type="Node3D" parent="."]
 
@@ -22,9 +47,16 @@ shape = SubResource("CapsuleShape3D_hqtel")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25038, -0.2912409)
 
-[node name="InteractRay" type="RayCast3D" parent="Camera3D"]
-target_position = Vector3(0, 0, -2.5)
-collision_mask = 3
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_vgqql")
+ItemTypes = Array[ExtResource("4_fkybt")]([SubResource("Resource_x3wgy"), SubResource("Resource_3smsa")])
 
-[node name="GroundRay" type="RayCast3D" parent="."]
-target_position = Vector3(0, -0.1, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.795205, 0)
+shape = SubResource("SphereShape3D_cvnsp")
+
+[connection signal="OnItemPickedUp" from="InteractionArea" to="UI" method="PickUpItem"]
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]

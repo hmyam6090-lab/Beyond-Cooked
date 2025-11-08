@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://be1pfwy4fhnp2" path="res://Scripts/test_ground.gd" id="1_x1xgk"]
 [ext_resource type="PackedScene" uid="uid://0jh66jscfiiu" path="res://Scenes/Scenery/rocket.tscn" id="3_i6jhg"]
 [ext_resource type="PackedScene" uid="uid://basb18mtsg20s" path="res://Assets/glb_model/stairs.glb" id="4_x1xgk"]
-[ext_resource type="PackedScene" uid="uid://ce5c0gpahdbkr" path="res://Scenes/Scenery/ui.tscn" id="5_lbatl"]
+[ext_resource type="PackedScene" uid="uid://s01smbi8t2p6" path="res://Assets/Prefab/testcube.tscn" id="5_lbatl"]
+[ext_resource type="PackedScene" uid="uid://due6jvu3mtonp" path="res://Scenes/Scenery/cheese.tscn" id="6_2heq8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x1xgk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,15 +26,10 @@ size = Vector3(60, 2, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_mbbig"]
 size = Vector3(60, 2, 60)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_x1xgk"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_lbatl"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lbatl"]
 
 [node name="Test Ground" type="Node3D"]
 script = ExtResource("1_x1xgk")
-
-[node name="UI" parent="." instance=ExtResource("5_lbatl")]
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2heq8")
@@ -48,7 +44,7 @@ shape = SubResource("BoxShape3D_il4dt")
 mesh = SubResource("BoxMesh_mbbig")
 
 [node name="Player" parent="." instance=ExtResource("1_quavu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 2)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1, 0)
@@ -60,26 +56,11 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, -0.297441, -9)
 [node name="stairs" parent="." instance=ExtResource("4_x1xgk")]
 transform = Transform3D(-1.5298985e-08, 0, 0.35, 0, 0.4, 0, -0.35, 0, -1.5298985e-08, -3.5008986, -0.04982406, -1.0377698)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["pickable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mass = 10.0
-angular_damp = 0.5
+[node name="ItemTestCube2" parent="." instance=ExtResource("5_lbatl")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_x1xgk")
+[node name="cheese" parent="." instance=ExtResource("6_2heq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.98139775, 2)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("BoxMesh_lbatl")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="RigidBody3D" groups=["pickable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
-mass = 10.0
-angular_damp = 0.5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/RigidBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("BoxShape3D_x1xgk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/RigidBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("BoxMesh_lbatl")
+[node name="ItemTestCube3" parent="." instance=ExtResource("5_lbatl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_lbatl")
