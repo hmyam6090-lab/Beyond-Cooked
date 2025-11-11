@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_group("Movement")
-@export var moveSpeed = 5.0
+@export var moveSpeed = 10
 @export var acceleration = 7.5
 var moveDir: Vector3
 
@@ -13,10 +13,10 @@ var moveDir: Vector3
 @onready var camera = $Camera3D
 
 @export_group("Holding Objects")
-@export var throwForce = 7.5
+@export var throwForce = 0.75
 @export var followSpeed = 5.0
-@export var followDistance = 2.5
-@export var maxDistanceFromCamera = 5.0
+@export var followDistance = 1.5
+@export var maxDistanceFromCamera = 4
 @export var dropBelowPlayer = false
 @export var groundRay : RayCast3D
 
@@ -72,6 +72,7 @@ func handle_holding_objects():
 	if Input.is_action_just_pressed("interact_p"):
 		if heldObject != null: drop_held_object()
 		elif interactRay.is_colliding(): 
+			print(interactRay.get_collider())
 			var target = interactRay.get_collider()
 			if target is RigidBody3D: set_held_object(target)
 	

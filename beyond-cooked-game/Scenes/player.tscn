@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://mvo80e0r2be2"]
+[gd_scene load_steps=17 format=3 uid="uid://mvo80e0r2be2"]
 
 [ext_resource type="Script" uid="uid://bcfge2hh62xeu" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://bvrd16fplgtn0" path="res://Assets/PlayerCharacter/repo_demo.glb" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://bkuckaa2ukp15" path="res://Inventory/PlayerInteractionHandler.gd" id="3_vgqql"]
 [ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="4_fkybt"]
-[ext_resource type="PackedScene" uid="uid://s01smbi8t2p6" path="res://Assets/Prefab/testcube.tscn" id="5_fkybt"]
-[ext_resource type="Texture2D" uid="uid://blsfyxrp6mv72" path="res://Assets/UI/BoxIcon.png" id="5_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://dpw4peuo6yaps" path="res://Assets/UI/redboxicon.png" id="6_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://ce5c0gpahdbkr" path="res://Scenes/Scenery/ui.tscn" id="7_3smsa"]
-[ext_resource type="PackedScene" uid="uid://due6jvu3mtonp" path="res://Scenes/Scenery/cheese.tscn" id="8_8erm5"]
+[ext_resource type="PackedScene" uid="uid://egq42matrx24" path="res://scene_objects/red.tscn" id="7_8erm5"]
+[ext_resource type="Texture2D" uid="uid://bjorj2dddinvg" path="res://Assets/UI/yellow.png" id="8_f1ek2"]
+[ext_resource type="PackedScene" uid="uid://c2l636emcj0a" path="res://scene_objects/yellow.tscn" id="9_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://c1denb1ea4bdj" path="res://Assets/UI/bs.png" id="10_gymyn"]
+[ext_resource type="PackedScene" uid="uid://7nogqul7lhmw" path="res://scene_objects/pink.tscn" id="11_pu2lt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
 radius = 0.3
@@ -15,16 +18,23 @@ height = 1.5
 
 [sub_resource type="Resource" id="Resource_3smsa"]
 script = ExtResource("4_fkybt")
-ItemName = "cheese"
-Icon = ExtResource("5_x3wgy")
-ItemModelPrefab = ExtResource("8_8erm5")
+ItemName = "red"
+Icon = ExtResource("6_x3wgy")
+ItemModelPrefab = ExtResource("7_8erm5")
 metadata/_custom_type_script = "uid://vxwff2w70g"
 
-[sub_resource type="Resource" id="Resource_x3wgy"]
+[sub_resource type="Resource" id="Resource_gymyn"]
 script = ExtResource("4_fkybt")
-ItemName = "Test_Cube"
-Icon = ExtResource("5_x3wgy")
-ItemModelPrefab = ExtResource("5_fkybt")
+ItemName = "yellow"
+Icon = ExtResource("8_f1ek2")
+ItemModelPrefab = ExtResource("9_tx1dd")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_ukyrk"]
+script = ExtResource("4_fkybt")
+ItemName = "pink"
+Icon = ExtResource("10_gymyn")
+ItemModelPrefab = ExtResource("11_pu2lt")
 metadata/_custom_type_script = "uid://vxwff2w70g"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
@@ -57,7 +67,7 @@ target_position = Vector3(0, 0, 2)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_vgqql")
-ItemTypes = Array[ExtResource("4_fkybt")]([SubResource("Resource_3smsa"), SubResource("Resource_x3wgy")])
+ItemTypes = Array[ExtResource("4_fkybt")]([SubResource("Resource_3smsa"), SubResource("Resource_gymyn"), SubResource("Resource_ukyrk")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.795205, 0)

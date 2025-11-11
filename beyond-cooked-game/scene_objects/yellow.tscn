@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=4 uid="uid://c2l636emcj0a"]
+
+[ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_14bb6"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b5d33"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.014651676, 0.47069666, 0.47069666, 0.073521286, 0.35295743, 0.47060993, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.014651676, 0.47069666, -0.47069666, 0.5, -0.5, 0.5, -0.014651676, 0.47069666, 0.47069666, 0.014651676, 0.47069666, -0.47069666)
+
+[sub_resource type="PrismMesh" id="PrismMesh_2ja30"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2vur"]
+albedo_color = Color(1, 0.9490196, 0, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_74srd"]
+_surfaces = [{
+"aabb": AABB(-0.5267261, -0.5298807, -0.53077286, 1.0534523, 1.065662, 1.0615457),
+"attribute_data": PackedByteArray("q6oqPgAAAABWVVU/AAAAAKuqKj4AAAAAVlVVPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqio/AAAAPwAAgD8AAAA/q6oqPwAAgD8AAIA/AACAPw=="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AgAEAAYAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAASABEAEQASABMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("VUmHvPcoCT+74Ac/VEmHvPcoCT+74Ae/VUmHvPcoCT+74Ac/VEmHvPcoCT+74Ae/htcGv0OmB79Dpgc/htcGP0OmB79Dpge/htcGP0OmB79Dpgc/htcGv0OmB79Dpge/VUmHvPcoCT+74Ac/VEmHvPcoCT+74Ae/VEmHvPcoCT+74Ae/VUmHvPcoCT+74Ac/htcGP0OmB79Dpgc/htcGv0OmB79Dpge/htcGP0OmB79Dpge/htcGv0OmB79Dpgc/htcGv0OmB79Dpgc/htcGP0OmB79Dpgc/htcGv0OmB79Dpge/htcGP0OmB79Dpge//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v1TVqqr/////qiqqqv9//79U1aqq/////6oqqqr/f/+/VNWqqv////+qKqqq/3//v1TVqqr/////qiqqqv9//78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vw==")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1rd4"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.9
+
+[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_14bb6")
+ItemHighlightMesh = NodePath("MeshInstance3D/Outline")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_b5d33")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("PrismMesh_2ja30")
+surface_material_override/0 = SubResource("StandardMaterial3D_i2vur")
+
+[node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_74srd")
+surface_material_override/0 = SubResource("StandardMaterial3D_i1rd4")
