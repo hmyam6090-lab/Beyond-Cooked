@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj8aix68apwc2"]
+[gd_scene load_steps=17 format=3 uid="uid://cj8aix68apwc2"]
 
 [ext_resource type="PackedScene" uid="uid://mvo80e0r2be2" path="res://Scenes/player.tscn" id="1_quavu"]
 [ext_resource type="Shader" uid="uid://ct7sxhtdrpk86" path="res://Scripts/space_sky.gdshader" id="1_x1xgk"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c2l636emcj0a" path="res://scene_objects/yellow.tscn" id="6_2heq8"]
 [ext_resource type="ArrayMesh" uid="uid://qymmas0nypte" path="res://Assets/glb_model/Terrain.obj" id="6_ibyf0"]
 [ext_resource type="PackedScene" uid="uid://7nogqul7lhmw" path="res://scene_objects/pink.tscn" id="7_ibyf0"]
+[ext_resource type="PackedScene" uid="uid://cwyxkr7oe05e7" path="res://pan.tscn" id="8_hh2ie"]
+[ext_resource type="PackedScene" uid="uid://ciefwmw5uqldt" path="res://knife.tscn" id="9_r6aon"]
+[ext_resource type="PackedScene" uid="uid://co1e1hb06wqou" path="res://mob.tscn" id="10_va8pw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lbatl"]
 shader = ExtResource("1_x1xgk")
@@ -72,11 +75,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -24)
 shape = SubResource("BoxShape3D_il4dt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.156193, 0.9981973, -24.226498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.156193, 0.9981973, -24.226498)
 mesh = SubResource("BoxMesh_mbbig")
 
 [node name="Player" parent="." instance=ExtResource("1_quavu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 0, -7)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 0.5717869, -7)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1, 0)
@@ -84,7 +87,7 @@ light_energy = 0.7
 shadow_enabled = true
 
 [node name="Terrain" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 0, -31)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 0, -27)
 mesh = ExtResource("6_ibyf0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Terrain"]
@@ -115,20 +118,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.277135, 0.8613396, -11.22
 [node name="yellow1" parent="items" instance=ExtResource("6_2heq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.012567, 0.8613396, -11.229346)
 
+[node name="pink" parent="items" instance=ExtResource("7_ibyf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -11)
+
+[node name="pink1" parent="items" instance=ExtResource("7_ibyf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.700001, 1, -11)
+
+[node name="pink2" parent="items" instance=ExtResource("7_ibyf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3, 1, -11)
+
+[node name="pink3" parent="items" instance=ExtResource("7_ibyf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.900001, 1, -11)
+
 [node name="yellow2" parent="items" instance=ExtResource("6_2heq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.705017, 0.8613396, -11.229346)
+
+[node name="Pan" parent="items" instance=ExtResource("8_hh2ie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.517207, 1, -8)
+
+[node name="Knife" parent="items" instance=ExtResource("9_r6aon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.641098, 1, -7)
 
 [node name="yellow3" parent="items" instance=ExtResource("6_2heq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.383223, 0.8613396, -11.229346)
 
-[node name="RigidBody3D" parent="." instance=ExtResource("7_ibyf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -11)
-
-[node name="RigidBody3D2" parent="." instance=ExtResource("7_ibyf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.700001, 1, -11)
-
-[node name="RigidBody3D3" parent="." instance=ExtResource("7_ibyf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3, 1, -11)
-
-[node name="RigidBody3D4" parent="." instance=ExtResource("7_ibyf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.900001, 1, -11)
+[node name="Mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_va8pw")]
+transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, -22, 1, -21)
+player = NodePath("../Player")

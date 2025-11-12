@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5daoseegbc7w"]
+
+[ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_5n162"]
+[ext_resource type="PackedScene" uid="uid://cx7uaricvmqku" path="res://Assets/glb_model/lowpoly_burger.glb" id="2_eu31t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvufg"]
+
+[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_5n162")
+ItemHighlightMesh = NodePath("Sketchfab_Scene/MeshInstance3D")
+isChoppable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.024758428, 0.13018268, 0.008877277)
+shape = SubResource("BoxShape3D_jvufg")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_eu31t")]
+transform = Transform3D(0.21000001, 0, 0, 0, 0.36, 0, 0, 0, 0.21000001, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene"]

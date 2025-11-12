@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciefwmw5uqldt"]
+
+[ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_8wt88"]
+[ext_resource type="PackedScene" uid="uid://dgyyxj88op53w" path="res://Assets/glb_model/kitchen_knife.glb" id="2_s4gn3"]
+[ext_resource type="Script" uid="uid://bhvfd5yabk47v" path="res://knife.gd" id="3_s4gn3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qjenl"]
+
+[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_8wt88")
+ItemHighlightMesh = NodePath("Sketchfab_Scene/dummyOutline")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_s4gn3")]
+
+[node name="dummyOutline" type="MeshInstance3D" parent="Sketchfab_Scene"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.08317597, 0.0023619384)
+shape = SubResource("BoxShape3D_qjenl")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("3_s4gn3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.108128764, 0.0030705198)
+shape = SubResource("BoxShape3D_qjenl")
+
+[connection signal="body_shape_entered" from="Area3D" to="Area3D" method="_on_body_shape_entered"]

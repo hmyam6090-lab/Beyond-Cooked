@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_group("Movement")
-@export var moveSpeed = 10
+@export var moveSpeed = 5
 @export var acceleration = 7.5
 var moveDir: Vector3
 

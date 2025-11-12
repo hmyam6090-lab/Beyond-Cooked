@@ -2,6 +2,8 @@ extends Node
 class_name InteractableItem
 
 @export var ItemHighlightMesh : MeshInstance3D
+@export var isChoppable : bool
+@export var isIngredient : bool
 
 func GainFocus():
 	ItemHighlightMesh.visible = true
