@@ -22,4 +22,4 @@ func FillSlot(data: ItemData):
 		IconSlot.texture = null
 		
 func Highlight(selected: bool):
-	modulate = Color(1, 1, 1) if not selected else Color(1.2, 1.2, 1.2)
+	modulate = Color(1, 1, 1) if not selected else Color(1.5, 1.5, 1.5, 1.0)

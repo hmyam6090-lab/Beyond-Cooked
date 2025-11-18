@@ -24,20 +24,20 @@ func _ready() -> void:
 	_update_slot_highlight()
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("next_slot"):
-		_select_next_slot()
-	elif Input.is_action_just_pressed("prev_slot"):
-		_select_prev_slot()
-	elif Input.is_action_just_pressed("drop_item"):
-		_drop_current_item()
- 		
-func _select_next_slot():
-	CurrentSlotIndex = (CurrentSlotIndex + 1) % InventorySlots.size()
+	if Input.is_action_just_pressed("slot1"):
+		_select_slot(1)
+	elif Input.is_action_just_pressed("slot2"):
+		_select_slot(2)
+	elif Input.is_action_just_pressed("slot3"):
+		_select_slot(3)
+	elif Input.is_action_just_pressed("slot4"):
+		_select_slot(4)
+	
+	
+func _select_slot(slot : int):
+	CurrentSlotIndex = slot-1
 	_update_slot_highlight()
 
-func _select_prev_slot():
-	CurrentSlotIndex = (CurrentSlotIndex - 1 + InventorySlots.size()) % InventorySlots.size()
-	_update_slot_highlight()
 
 func _update_slot_highlight():
 	for i in InventorySlots.size():
