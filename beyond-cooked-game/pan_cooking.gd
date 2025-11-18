@@ -1,17 +1,48 @@
 extends Area3D
 
-var isRed : bool
-var isYellow : bool
-
-@export var ItemTypes : Array[ItemData] = []
-
-var burger_scene = preload("res://burger.tscn")
+@export var Recipes : Array[RecipeData] = []    
+var InPan : Array[String] = []                 
+var cooked := false
 
 func _on_body_entered(body: InteractableItem) -> void:
-	if (body is InteractableItem):
-		if (body.isIngredient):
-			print("Cooked")
-			var burger = burger_scene.instantiate()
-			burger.global_position = body.global_position
-			body.get_parent().add_child(burger)
-			body.queue_free()
+	if not (body is InteractableItem):
+		return
+	if not body.isIngredient:
+		return
+
+	print("Ingredient in pan: ", body.Data.ItemName)
+
+	InPan.append(body.Data.ItemName)
+
+	body.queue_free()
+
+	_check_recipes()
+
+
+func _check_recipes():
+	if cooked:
+		return
+
+	for recipe in Recipes:
+		if _matches_recipe(recipe.RequiredItems, InPan):
+			print("Recipe matched! Cooking...")
+			cooked = true
+			_spawn_output(recipe.OutputScene)
+			return
+
+
+func _matches_recipe(required: Array[String], inside: Array[String]) -> bool:
+	for item in required:
+		if not inside.has(item):
+			return false
+
+	return true
+
+
+func _spawn_output(scene: PackedScene):
+	var obj = scene.instantiate()
+	get_parent().add_child(obj)
+	obj.transform.origin = Vector3.ZERO
+	obj.transform.origin = Vector3(0, 0.5, 0)
+
+	print("Cooked: ", obj.name)

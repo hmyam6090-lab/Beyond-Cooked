@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=3 format=3 uid="uid://c800cd781m7yv"]
+
+[ext_resource type="PackedScene" uid="uid://c5daoseegbc7w" path="res://burger.tscn" id="1_5j0wr"]
+[ext_resource type="Script" uid="uid://du7mpqst2462q" path="res://RecipeData.gd" id="1_u3chv"]
+
+[resource]
+script = ExtResource("1_u3chv")
+RequiredItems = Array[String](["Red", "Yellow"])
+OutputScene = ExtResource("1_5j0wr")
+metadata/_custom_type_script = "uid://du7mpqst2462q"

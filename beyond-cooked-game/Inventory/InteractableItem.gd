@@ -5,6 +5,8 @@ class_name InteractableItem
 @export var isChoppable : bool
 @export var isIngredient : bool
 
+@export var Data : ItemData
+
 func GainFocus():
 	ItemHighlightMesh.visible = true
 	

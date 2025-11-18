@@ -1,13 +1,19 @@
-[gd_scene load_steps=15 format=4 uid="uid://cwyxkr7oe05e7"]
+[gd_scene load_steps=14 format=4 uid="uid://cwyxkr7oe05e7"]
 
 [ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_bg2j3"]
+[ext_resource type="Texture2D" uid="uid://cd0oopixgmfsk" path="res://Assets/UI/panIcon.png" id="2_aekj7"]
 [ext_resource type="ArrayMesh" uid="uid://duj8e8stcia2g" path="res://Assets/glb_model/pan.obj" id="2_djo8e"]
 [ext_resource type="Script" uid="uid://cm7xmiifkajh" path="res://pan_cooking.gd" id="3_djo8e"]
 [ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="4_47ywb"]
-[ext_resource type="Texture2D" uid="uid://dpw4peuo6yaps" path="res://Assets/UI/redboxicon.png" id="5_inlb6"]
-[ext_resource type="PackedScene" uid="uid://egq42matrx24" path="res://scene_objects/red.tscn" id="6_3pi4w"]
-[ext_resource type="Texture2D" uid="uid://bjorj2dddinvg" path="res://Assets/UI/yellow.png" id="7_3pi4w"]
-[ext_resource type="PackedScene" uid="uid://c2l636emcj0a" path="res://scene_objects/yellow.tscn" id="8_t362g"]
+[ext_resource type="Script" uid="uid://du7mpqst2462q" path="res://RecipeData.gd" id="6_inlb6"]
+[ext_resource type="Resource" uid="uid://c800cd781m7yv" path="res://burger_recipe.tres" id="7_3pi4w"]
+[ext_resource type="Resource" uid="uid://biu6s0ugpk4rg" path="res://pizza_recipe.tres" id="8_3pi4w"]
+
+[sub_resource type="Resource" id="Resource_v8qao"]
+script = ExtResource("4_47ywb")
+ItemName = "Pan"
+Icon = ExtResource("2_aekj7")
+metadata/_custom_type_script = "uid://vxwff2w70g"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8qao"]
 albedo_color = Color(0.47007585, 0.47007585, 0.47007585, 1)
@@ -31,25 +37,12 @@ _surfaces = [{
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3pi4w"]
 points = PackedVector3Array(-0.63637537, 0.0069316253, -0.023706352, 0.23901173, 0.0069316253, -0.23896825, 0.23901173, 0.0069316253, 0.23449838, -0.2749, 0.0777554, 0.27035072, 0.27038792, 0.07776558, -0.2749, -0.63637537, 0.06431654, -0.023706352, -0.2749, 0.0777554, -0.2748206, 0.2733888, 0.078, 0.27225843, -0.27748194, 0.049968556, 0.27755076, -0.22297476, 0.014099999, -0.1916633, -0.63637537, 0.0069316253, 0.01923648, -0.22297476, 0.014099999, 0.18719342, -0.63637537, 0.06431654, 0.01923648, -0.22885312, 0.049272425, -0.25483167, 0.21141551, 0.049493536, 0.2589978)
 
-[sub_resource type="Resource" id="Resource_t362g"]
-script = ExtResource("4_47ywb")
-ItemName = "red"
-Icon = ExtResource("5_inlb6")
-ItemModelPrefab = ExtResource("6_3pi4w")
-metadata/_custom_type_script = "uid://vxwff2w70g"
-
-[sub_resource type="Resource" id="Resource_0nsp4"]
-script = ExtResource("4_47ywb")
-ItemName = "yellow"
-Icon = ExtResource("7_3pi4w")
-ItemModelPrefab = ExtResource("8_t362g")
-metadata/_custom_type_script = "uid://vxwff2w70g"
-
 [node name="Pan" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_bg2j3")
 ItemHighlightMesh = NodePath("Pan/Outline")
+Data = SubResource("Resource_v8qao")
 
 [node name="Pan" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_djo8e")
@@ -67,7 +60,7 @@ shape = SubResource("ConvexPolygonShape3D_3pi4w")
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("3_djo8e")
-ItemTypes = Array[ExtResource("4_47ywb")]([SubResource("Resource_t362g"), SubResource("Resource_0nsp4")])
+Recipes = Array[ExtResource("6_inlb6")]([ExtResource("7_3pi4w"), ExtResource("8_3pi4w")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, 0, -0.009063557, 0)

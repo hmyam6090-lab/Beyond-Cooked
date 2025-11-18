@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cx7uaricvmqku" path="res://Assets/glb_model/lowpoly_burger.glb" id="2_eu31t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jvufg"]
+size = Vector3(1, 0.119628906, 1)
 
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 3

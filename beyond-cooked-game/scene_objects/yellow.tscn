@@ -1,6 +1,15 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2l636emcj0a"]
+[gd_scene load_steps=10 format=4 uid="uid://c2l636emcj0a"]
 
 [ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_14bb6"]
+[ext_resource type="Texture2D" uid="uid://bjorj2dddinvg" path="res://Assets/UI/yellow.png" id="2_kx2u4"]
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="3_2m3x7"]
+
+[sub_resource type="Resource" id="Resource_rnqos"]
+script = ExtResource("3_2m3x7")
+ItemName = "Yellow"
+Icon = ExtResource("2_kx2u4")
+ItemModelPrefab = null
+metadata/_custom_type_script = "uid://vxwff2w70g"
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b5d33"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.014651676, 0.47069666, 0.47069666, 0.073521286, 0.35295743, 0.47060993, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.014651676, 0.47069666, -0.47069666, 0.5, -0.5, 0.5, -0.014651676, 0.47069666, 0.47069666, 0.014651676, 0.47069666, -0.47069666)
@@ -35,6 +44,7 @@ collision_mask = 3
 script = ExtResource("1_14bb6")
 ItemHighlightMesh = NodePath("MeshInstance3D/Outline")
 isIngredient = true
+Data = SubResource("Resource_rnqos")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
