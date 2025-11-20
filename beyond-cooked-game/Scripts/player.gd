@@ -52,7 +52,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouseSens.x * 0.01)
 		camera.rotate_x(-event.relative.y * mouseSens.y * 0.01)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-45), deg_to_rad(45))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		
 func set_held_object(body: Node3D):
 	heldObject = body

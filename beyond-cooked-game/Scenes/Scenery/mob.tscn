@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://co1e1hb06wqou"]
+
+[ext_resource type="Script" uid="uid://dhnq30mkfnn0u" path="res://Scripts/mob.gd" id="1_nokgg"]
+[ext_resource type="PackedScene" uid="uid://bksb0cfx7emql" path="res://Assets/glb_model/gordon_ramsay.glb" id="2_nokgg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
+radius = 0.3
+height = 1.75
+
+[node name="Mob" type="CharacterBody3D"]
+script = ExtResource("1_nokgg")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="Pivot" instance=ExtResource("2_nokgg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9032316, 0)
+shape = SubResource("CapsuleShape3D_hqtel")

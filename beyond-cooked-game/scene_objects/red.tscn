@@ -8,7 +8,6 @@
 script = ExtResource("3_uhsje")
 ItemName = "Red"
 Icon = ExtResource("2_k0to5")
-ItemModelPrefab = null
 metadata/_custom_type_script = "uid://vxwff2w70g"
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2heq8"]

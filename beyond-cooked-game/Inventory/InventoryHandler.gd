@@ -38,16 +38,24 @@ func _select_slot(slot : int):
 	CurrentSlotIndex = slot-1
 	_update_slot_highlight()
 
-
 func _update_slot_highlight():
 	for i in InventorySlots.size():
 		InventorySlots[i].Highlight(i == CurrentSlotIndex)
 
 func PickUpItem(item: ItemData):
-	for slot in InventorySlots:
-		if(!slot.SlotFilled):
-			slot.FillSlot(item)
-			break
+	if (!isInventoryFull()):
+		for slot in InventorySlots:
+			if(!slot.SlotFilled):
+				slot.FillSlot(item)
+				break
+	else: 
+		print("Inventory FULL!")
+
+func isInventoryFull():
+	for i in InventorySlots:
+		if(!i.SlotFilled):
+			return false;
+	return true;
 
 func _drop_current_item():
 	var current_slot = InventorySlots[CurrentSlotIndex]
@@ -76,5 +84,4 @@ func GetWorldMousePosition() -> Vector3:
 		return results["position"] as Vector3 + Vector3(0.0, 0.5, 0.0)
 	else:
 		return ray_start.lerp(ray_end, 0.5) + Vector3(0.0, 0.5, 0.0)
-	
 	

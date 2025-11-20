@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c1denb1ea4bdj" path="res://Assets/UI/bs.png" id="10_gymyn"]
 [ext_resource type="PackedScene" uid="uid://7nogqul7lhmw" path="res://scene_objects/pink.tscn" id="11_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://cd0oopixgmfsk" path="res://Assets/UI/panIcon.png" id="12_ukyrk"]
-[ext_resource type="PackedScene" uid="uid://cwyxkr7oe05e7" path="res://pan.tscn" id="13_7dp3o"]
-[ext_resource type="PackedScene" uid="uid://ciefwmw5uqldt" path="res://knife.tscn" id="14_7dp3o"]
+[ext_resource type="PackedScene" uid="uid://cwyxkr7oe05e7" path="res://Scenes/Scenery/pan.tscn" id="13_7dp3o"]
+[ext_resource type="PackedScene" uid="uid://ciefwmw5uqldt" path="res://Scenes/Scenery/knife.tscn" id="14_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://cnsml2w6pfw5f" path="res://Assets/UI/knifeIcon.png" id="14_h4iuc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
