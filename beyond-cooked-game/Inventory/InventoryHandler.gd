@@ -32,6 +32,9 @@ func _process(delta: float) -> void:
 		_select_slot(3)
 	elif Input.is_action_just_pressed("slot4"):
 		_select_slot(4)
+		
+	if Input.is_action_just_pressed("drop_item"):
+		_drop_current_item()
 	
 	
 func _select_slot(slot : int):

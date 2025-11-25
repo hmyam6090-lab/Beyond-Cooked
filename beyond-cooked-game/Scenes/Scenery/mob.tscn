@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://co1e1hb06wqou"]
 
-[ext_resource type="Script" uid="uid://dhnq30mkfnn0u" path="res://Scripts/mob.gd" id="1_nokgg"]
+[ext_resource type="Script" uid="uid://du7xy0pmlppkq" path="res://Scripts/mob.gd" id="1_nokgg"]
 [ext_resource type="PackedScene" uid="uid://bksb0cfx7emql" path="res://Assets/glb_model/gordon_ramsay.glb" id="2_nokgg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
@@ -18,3 +18,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9032316, 0)
 shape = SubResource("CapsuleShape3D_hqtel")
+
+[node name="VisionRay" type="RayCast3D" parent="."]
+transform = Transform3D(-0.98899454, -0.10938169, -0.09962684, -0.11019679, 0.9939059, 0.0026993714, 0.09872447, 0.013648255, -0.9950211, 0, 1.6, 0)
+target_position = Vector3(0, 0, 10)
