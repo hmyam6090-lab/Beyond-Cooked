@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4axgw7c0l15n"
+path="res://.godot/imported/dish_dryer.obj-e84254d4f2dd29fee06e7a70b2f3cd1f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dish_dryer.obj-e84254d4f2dd29fee06e7a70b2f3cd1f.mesh"]
+
+source_file="res://Addon/kitchen_assetpack/dish_dryer/dish_dryer.obj"
+dest_files=["res://.godot/imported/dish_dryer.obj-e84254d4f2dd29fee06e7a70b2f3cd1f.mesh", "res://.godot/imported/dish_dryer.obj-e84254d4f2dd29fee06e7a70b2f3cd1f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
