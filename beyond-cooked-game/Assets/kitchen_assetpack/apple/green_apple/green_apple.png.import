@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3n4kdkppkc7f"
 path.s3tc="res://.godot/imported/green_apple.png-1733afae04fa7a8db9aa5f45f58adae7.s3tc.ctex"
+path.etc2="res://.godot/imported/green_apple.png-1733afae04fa7a8db9aa5f45f58adae7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/apple/green_apple/green_apple.png"
-dest_files=["res://.godot/imported/green_apple.png-1733afae04fa7a8db9aa5f45f58adae7.s3tc.ctex"]
+dest_files=["res://.godot/imported/green_apple.png-1733afae04fa7a8db9aa5f45f58adae7.s3tc.ctex", "res://.godot/imported/green_apple.png-1733afae04fa7a8db9aa5f45f58adae7.etc2.ctex"]
 
 [params]
 

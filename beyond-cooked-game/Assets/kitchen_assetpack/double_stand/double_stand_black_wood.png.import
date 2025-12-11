@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxpqvqppcxa5l"
 path.s3tc="res://.godot/imported/double_stand_black_wood.png-073889c1a3aabd09fc0fa20d8c133ce8.s3tc.ctex"
+path.etc2="res://.godot/imported/double_stand_black_wood.png-073889c1a3aabd09fc0fa20d8c133ce8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/double_stand/double_stand_black_wood.png"
-dest_files=["res://.godot/imported/double_stand_black_wood.png-073889c1a3aabd09fc0fa20d8c133ce8.s3tc.ctex"]
+dest_files=["res://.godot/imported/double_stand_black_wood.png-073889c1a3aabd09fc0fa20d8c133ce8.s3tc.ctex", "res://.godot/imported/double_stand_black_wood.png-073889c1a3aabd09fc0fa20d8c133ce8.etc2.ctex"]
 
 [params]
 

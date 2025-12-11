@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dtcnvhkd6r38"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 108.0
+offset_top = 1.0
+offset_right = 148.0
+offset_bottom = 41.0
+
+[node name="RecipeStatus" type="Label" parent="."]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 255.0
+offset_right = 240.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 50
+text = "Recipe Status:"
+
+[node name="CurrentIngredient" type="Label" parent="."]
+layout_mode = 0
+offset_left = -104.0
+offset_top = 12.0
+offset_right = 385.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 50
+text = "Current Ingredients:"

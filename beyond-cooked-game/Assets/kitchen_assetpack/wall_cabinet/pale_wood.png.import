@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7v4uxuvx3ud2"
 path.s3tc="res://.godot/imported/pale_wood.png-8f7b1556727837efca75a5e1d9752be8.s3tc.ctex"
+path.etc2="res://.godot/imported/pale_wood.png-8f7b1556727837efca75a5e1d9752be8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/wall_cabinet/pale_wood.png"
-dest_files=["res://.godot/imported/pale_wood.png-8f7b1556727837efca75a5e1d9752be8.s3tc.ctex"]
+dest_files=["res://.godot/imported/pale_wood.png-8f7b1556727837efca75a5e1d9752be8.s3tc.ctex", "res://.godot/imported/pale_wood.png-8f7b1556727837efca75a5e1d9752be8.etc2.ctex"]
 
 [params]
 

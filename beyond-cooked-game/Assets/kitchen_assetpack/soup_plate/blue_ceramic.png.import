@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4oajgo0ivxki"
 path.s3tc="res://.godot/imported/blue_ceramic.png-e9e80dfb9820b6cb41923e1f07a2495c.s3tc.ctex"
+path.etc2="res://.godot/imported/blue_ceramic.png-e9e80dfb9820b6cb41923e1f07a2495c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/soup_plate/blue_ceramic.png"
-dest_files=["res://.godot/imported/blue_ceramic.png-e9e80dfb9820b6cb41923e1f07a2495c.s3tc.ctex"]
+dest_files=["res://.godot/imported/blue_ceramic.png-e9e80dfb9820b6cb41923e1f07a2495c.s3tc.ctex", "res://.godot/imported/blue_ceramic.png-e9e80dfb9820b6cb41923e1f07a2495c.etc2.ctex"]
 
 [params]
 

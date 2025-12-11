@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=14 format=3 uid="uid://pcw77ta7nc62"]
+
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_2g1yw"]
+[ext_resource type="Texture2D" uid="uid://dya2jh4f7hd3t" path="res://Assets/UI/Dishes/soup.png" id="1_vxm0o"]
+[ext_resource type="Texture2D" uid="uid://b83v8aep66f6c" path="res://Assets/UI/Ingredients/sliced_onions.png" id="2_gvuk8"]
+[ext_resource type="Script" uid="uid://uxtc1tmwwgqx" path="res://Scripts/RecipeData.gd" id="2_k75nc"]
+[ext_resource type="PackedScene" uid="uid://cdwpx81teorpy" path="res://scene_objects/InteractableItems/sliced_onion.tscn" id="3_m2fgs"]
+[ext_resource type="Texture2D" uid="uid://hqa74ggoejrr" path="res://Assets/UI/Ingredients/potato.png" id="4_2qltj"]
+[ext_resource type="PackedScene" uid="uid://r4ul67j0yg87" path="res://scene_objects/InteractableItems/potato.tscn" id="5_bf66i"]
+[ext_resource type="Texture2D" uid="uid://ciqvgm3b6rbpg" path="res://Assets/UI/Ingredients/sliced_tomato.png" id="6_2qltj"]
+[ext_resource type="PackedScene" uid="uid://bmdmo2ucjmbga" path="res://scene_objects/InteractableItems/sliced_tomato.tscn" id="7_bf66i"]
+[ext_resource type="PackedScene" uid="uid://chki0l1gvr0vs" path="res://scene_objects/InteractableItems/soup.tscn" id="9_7fd2r"]
+
+[sub_resource type="Resource" id="Resource_vxm0o"]
+script = ExtResource("1_2g1yw")
+ItemName = "Sliced Onion"
+Icon = ExtResource("2_gvuk8")
+ModelScene = ExtResource("3_m2fgs")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_7fd2r"]
+script = ExtResource("1_2g1yw")
+ItemName = "Potato"
+Icon = ExtResource("4_2qltj")
+ModelScene = ExtResource("5_bf66i")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_rjr0o"]
+script = ExtResource("1_2g1yw")
+ItemName = "Sliced Tomato"
+Icon = ExtResource("6_2qltj")
+ModelScene = ExtResource("7_bf66i")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[resource]
+script = ExtResource("2_k75nc")
+recipe_name = "Soup"
+cook_time = 10.0
+required_ingredients = Array[ExtResource("1_2g1yw")]([SubResource("Resource_vxm0o"), SubResource("Resource_7fd2r"), SubResource("Resource_rjr0o")])
+result_scene = ExtResource("9_7fd2r")
+dish_icon = ExtResource("1_vxm0o")
+reward = 30
+time_limit = 90.0
+metadata/_custom_type_script = "uid://uxtc1tmwwgqx"

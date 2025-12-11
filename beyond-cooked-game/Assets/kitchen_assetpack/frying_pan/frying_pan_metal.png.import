@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0q5bbn3f7sy8"
 path.s3tc="res://.godot/imported/frying_pan_metal.png-7d9a2035553d796610e547d44f9dc5b4.s3tc.ctex"
+path.etc2="res://.godot/imported/frying_pan_metal.png-7d9a2035553d796610e547d44f9dc5b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/frying_pan/frying_pan_metal.png"
-dest_files=["res://.godot/imported/frying_pan_metal.png-7d9a2035553d796610e547d44f9dc5b4.s3tc.ctex"]
+dest_files=["res://.godot/imported/frying_pan_metal.png-7d9a2035553d796610e547d44f9dc5b4.s3tc.ctex", "res://.godot/imported/frying_pan_metal.png-7d9a2035553d796610e547d44f9dc5b4.etc2.ctex"]
 
 [params]
 

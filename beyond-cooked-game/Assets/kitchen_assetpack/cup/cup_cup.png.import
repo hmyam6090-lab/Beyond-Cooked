@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxj02s65hnggo"
 path.s3tc="res://.godot/imported/cup_cup.png-36b9b8a6c4eeb99bf1073b4a047f8486.s3tc.ctex"
+path.etc2="res://.godot/imported/cup_cup.png-36b9b8a6c4eeb99bf1073b4a047f8486.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/cup/cup_cup.png"
-dest_files=["res://.godot/imported/cup_cup.png-36b9b8a6c4eeb99bf1073b4a047f8486.s3tc.ctex"]
+dest_files=["res://.godot/imported/cup_cup.png-36b9b8a6c4eeb99bf1073b4a047f8486.s3tc.ctex", "res://.godot/imported/cup_cup.png-36b9b8a6c4eeb99bf1073b4a047f8486.etc2.ctex"]
 
 [params]
 

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byr8p13uk7t45"
+path="res://.godot/imported/pillar_B.obj-9ceda51d765316e99d07f264c3499900.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pillar_B.obj-9ceda51d765316e99d07f264c3499900.mesh"]
+
+source_file="res://Assets/TutorialKitchen/Assets/obj/pillar_B.obj"
+dest_files=["res://.godot/imported/pillar_B.obj-9ceda51d765316e99d07f264c3499900.mesh", "res://.godot/imported/pillar_B.obj-9ceda51d765316e99d07f264c3499900.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://dckn1ymejoxjh"]
+
+[ext_resource type="Script" uid="uid://w3cyp84huoms" path="res://ChopHealth.gd" id="1_tove3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tove3"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tove3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tove3"]
+bg_color = Color(0.9079906, 0.27972275, 0.2810702, 1)
+border_width_bottom = 3
+border_color = Color(0.74103266, 0, 0.20665547, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf28u"]
+bg_color = Color(0, 1, 0, 1)
+border_width_bottom = 3
+border_color = Color(0.37106568, 0.5198201, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+
+[node name="HealthBar" type="Node3D" node_paths=PackedStringArray("progress_bar")]
+script = ExtResource("1_tove3")
+progress_bar = NodePath("Sprite3D/SubViewport/Panel/ProgressBar")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5921855, 0, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_tove3")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+size = Vector2i(124, 32)
+
+[node name="Panel" type="Panel" parent="Sprite3D/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tove3")
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite3D/SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.5
+anchor_right = 0.957
+anchor_bottom = 0.5
+offset_left = 0.08799982
+offset_top = -15.03
+offset_right = -0.08798218
+offset_bottom = 10.970003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tove3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bf28u")
+max_value = 3.0
+step = 1.0
+value = 1.0

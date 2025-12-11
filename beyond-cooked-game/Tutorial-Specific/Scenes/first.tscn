@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1o2f4byycv1j"]
+
+[ext_resource type="Script" uid="uid://b82fuhqx8bsax" path="res://Tutorial-Specific/Scripts/trigger.gd" id="1_v7rym"]
+[ext_resource type="AudioStream" uid="uid://guc2vs3von7f" path="res://Assets/sfx/Voicelines/welcome.wav" id="2_v7rym"]
+[ext_resource type="AudioStream" uid="uid://csdqtt7ced2mk" path="res://Assets/sfx/Voicelines/WASD.wav" id="3_5qor8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04km2"]
+size = Vector3(1, 2, 3)
+
+[node name="First" type="Area3D"]
+script = ExtResource("1_v7rym")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_04km2")
+
+[node name="Welcome" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_v7rym")
+pitch_scale = 0.9
+
+[node name="Welcome2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5qor8")
+pitch_scale = 0.9
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

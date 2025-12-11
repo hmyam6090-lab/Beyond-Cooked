@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6ifcmxgunoym"
+path="res://.godot/imported/crate_lid.obj-8d5f0dd4a70e291818015e886623f69e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crate_lid.obj-8d5f0dd4a70e291818015e886623f69e.mesh"]
+
+source_file="res://Assets/TutorialKitchen/Assets/obj/crate_lid.obj"
+dest_files=["res://.godot/imported/crate_lid.obj-8d5f0dd4a70e291818015e886623f69e.mesh", "res://.godot/imported/crate_lid.obj-8d5f0dd4a70e291818015e886623f69e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

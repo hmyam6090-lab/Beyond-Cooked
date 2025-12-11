@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7jhf2m8qssie"]
+
+[ext_resource type="Script" uid="uid://bx7wx047378mm" path="res://pot_ui.gd" id="1_jpe2g"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_atr1e"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PotUI" type="Node3D" node_paths=PackedStringArray("icon_container", "cook_bar")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.323, 0, 0, 0)
+script = ExtResource("1_jpe2g")
+icon_container = NodePath("Sprite3D/SubViewport/Control/GridContainer")
+cook_bar = NodePath("Sprite3D/SubViewport/Control/Cookbar")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = SubResource("ViewportTexture_atr1e")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+size = Vector2i(256, 256)
+
+[node name="Control" type="Control" parent="Sprite3D/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 108.0
+offset_top = 1.0
+offset_right = 148.0
+offset_bottom = 41.0
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "In Pot
+"
+
+[node name="GridContainer" type="GridContainer" parent="Sprite3D/SubViewport/Control"]
+layout_mode = 0
+offset_left = -94.0
+offset_top = 30.0
+offset_right = -54.0
+offset_bottom = 70.0
+columns = 4
+
+[node name="Cookbar" type="ProgressBar" parent="Sprite3D/SubViewport/Control"]
+modulate = Color(8.471012e-06, 0.9836655, 0, 1)
+layout_direction = 2
+layout_mode = 0
+offset_left = -83.00001
+offset_top = 156.0
+offset_right = -43.000008
+offset_bottom = 362.0
+scale = Vector2(5.473687, -0.1348464)
+value = 100.0
+show_percentage = false

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqlf2n5bagx12"
 path.s3tc="res://.godot/imported/black_metal.png-67168027275ba6b408a220ee66ad8041.s3tc.ctex"
+path.etc2="res://.godot/imported/black_metal.png-67168027275ba6b408a220ee66ad8041.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/frying_pan/black_metal.png"
-dest_files=["res://.godot/imported/black_metal.png-67168027275ba6b408a220ee66ad8041.s3tc.ctex"]
+dest_files=["res://.godot/imported/black_metal.png-67168027275ba6b408a220ee66ad8041.s3tc.ctex", "res://.godot/imported/black_metal.png-67168027275ba6b408a220ee66ad8041.etc2.ctex"]
 
 [params]
 

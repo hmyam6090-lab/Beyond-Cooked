@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bniv0qp348nki"
 path.s3tc="res://.godot/imported/detergent_white_plastic.png-36cb4e1d952bd89a2ebbab926d0a78d1.s3tc.ctex"
+path.etc2="res://.godot/imported/detergent_white_plastic.png-36cb4e1d952bd89a2ebbab926d0a78d1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/detergent/detergent_white_plastic.png"
-dest_files=["res://.godot/imported/detergent_white_plastic.png-36cb4e1d952bd89a2ebbab926d0a78d1.s3tc.ctex"]
+dest_files=["res://.godot/imported/detergent_white_plastic.png-36cb4e1d952bd89a2ebbab926d0a78d1.s3tc.ctex", "res://.godot/imported/detergent_white_plastic.png-36cb4e1d952bd89a2ebbab926d0a78d1.etc2.ctex"]
 
 [params]
 

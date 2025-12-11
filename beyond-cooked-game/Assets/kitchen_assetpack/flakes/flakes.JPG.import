@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx2bxsb725isl"
 path.s3tc="res://.godot/imported/flakes.JPG-4b909ac13e5a3ebfcc9a826f6f8bd7e9.s3tc.ctex"
+path.etc2="res://.godot/imported/flakes.JPG-4b909ac13e5a3ebfcc9a826f6f8bd7e9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/flakes/flakes.JPG"
-dest_files=["res://.godot/imported/flakes.JPG-4b909ac13e5a3ebfcc9a826f6f8bd7e9.s3tc.ctex"]
+dest_files=["res://.godot/imported/flakes.JPG-4b909ac13e5a3ebfcc9a826f6f8bd7e9.s3tc.ctex", "res://.godot/imported/flakes.JPG-4b909ac13e5a3ebfcc9a826f6f8bd7e9.etc2.ctex"]
 
 [params]
 

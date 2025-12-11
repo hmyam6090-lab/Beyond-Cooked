@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://va5ixokeigno"
 path.s3tc="res://.godot/imported/wall_lamp_lamp.png-3047fe35dee4c0f85d99ce6fe8989465.s3tc.ctex"
+path.etc2="res://.godot/imported/wall_lamp_lamp.png-3047fe35dee4c0f85d99ce6fe8989465.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/wall_lamp/wall_lamp_lamp.png"
-dest_files=["res://.godot/imported/wall_lamp_lamp.png-3047fe35dee4c0f85d99ce6fe8989465.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall_lamp_lamp.png-3047fe35dee4c0f85d99ce6fe8989465.s3tc.ctex", "res://.godot/imported/wall_lamp_lamp.png-3047fe35dee4c0f85d99ce6fe8989465.etc2.ctex"]
 
 [params]
 

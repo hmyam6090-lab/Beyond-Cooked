@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpadiwpr2p72q"
 path.s3tc="res://.godot/imported/black_metal.png-7af0b0bfe78ea870aa2d05e54eb8f1f3.s3tc.ctex"
+path.etc2="res://.godot/imported/black_metal.png-7af0b0bfe78ea870aa2d05e54eb8f1f3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/stove/black_metal.png"
-dest_files=["res://.godot/imported/black_metal.png-7af0b0bfe78ea870aa2d05e54eb8f1f3.s3tc.ctex"]
+dest_files=["res://.godot/imported/black_metal.png-7af0b0bfe78ea870aa2d05e54eb8f1f3.s3tc.ctex", "res://.godot/imported/black_metal.png-7af0b0bfe78ea870aa2d05e54eb8f1f3.etc2.ctex"]
 
 [params]
 

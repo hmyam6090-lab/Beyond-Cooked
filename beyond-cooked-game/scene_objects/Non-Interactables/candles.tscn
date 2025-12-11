@@ -20,4 +20,4 @@ light_color = Color(0.78, 0.41430998, 0.023399977, 1)
 light_energy = 2.0
 shadow_enabled = true
 distance_fade_enabled = true
-omni_range = 7.5
+omni_range = 10.0

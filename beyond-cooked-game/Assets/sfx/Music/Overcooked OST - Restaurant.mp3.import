@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iegst222coqm"
+path="res://.godot/imported/Overcooked OST - Restaurant.mp3-68e5efba64cdeffa424c8ce29c0b49e8.mp3str"
+
+[deps]
+
+source_file="res://Assets/sfx/Music/Overcooked OST - Restaurant.mp3"
+dest_files=["res://.godot/imported/Overcooked OST - Restaurant.mp3-68e5efba64cdeffa424c8ce29c0b49e8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

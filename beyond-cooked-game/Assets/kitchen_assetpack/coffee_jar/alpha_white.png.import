@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cylieuwl42jwk"
 path.s3tc="res://.godot/imported/alpha_white.png-b2f419c88e898a6be61ca849396964a0.s3tc.ctex"
+path.etc2="res://.godot/imported/alpha_white.png-b2f419c88e898a6be61ca849396964a0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/coffee_jar/alpha_white.png"
-dest_files=["res://.godot/imported/alpha_white.png-b2f419c88e898a6be61ca849396964a0.s3tc.ctex"]
+dest_files=["res://.godot/imported/alpha_white.png-b2f419c88e898a6be61ca849396964a0.s3tc.ctex", "res://.godot/imported/alpha_white.png-b2f419c88e898a6be61ca849396964a0.etc2.ctex"]
 
 [params]
 

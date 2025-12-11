@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn8ji2bx7ms7q"
 path.s3tc="res://.godot/imported/coffee_jar.jpg-43195f55ccff5cef9a34b95a0f4b3b83.s3tc.ctex"
+path.etc2="res://.godot/imported/coffee_jar.jpg-43195f55ccff5cef9a34b95a0f4b3b83.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/coffee_jar/coffee_jar.jpg"
-dest_files=["res://.godot/imported/coffee_jar.jpg-43195f55ccff5cef9a34b95a0f4b3b83.s3tc.ctex"]
+dest_files=["res://.godot/imported/coffee_jar.jpg-43195f55ccff5cef9a34b95a0f4b3b83.s3tc.ctex", "res://.godot/imported/coffee_jar.jpg-43195f55ccff5cef9a34b95a0f4b3b83.etc2.ctex"]
 
 [params]
 

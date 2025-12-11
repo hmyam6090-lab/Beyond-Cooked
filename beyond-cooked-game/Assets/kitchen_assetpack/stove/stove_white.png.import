@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkwjjfg3tw8eb"
 path.s3tc="res://.godot/imported/stove_white.png-b8eafed462502254da327fc84ce688e5.s3tc.ctex"
+path.etc2="res://.godot/imported/stove_white.png-b8eafed462502254da327fc84ce688e5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/stove/stove_white.png"
-dest_files=["res://.godot/imported/stove_white.png-b8eafed462502254da327fc84ce688e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/stove_white.png-b8eafed462502254da327fc84ce688e5.s3tc.ctex", "res://.godot/imported/stove_white.png-b8eafed462502254da327fc84ce688e5.etc2.ctex"]
 
 [params]
 

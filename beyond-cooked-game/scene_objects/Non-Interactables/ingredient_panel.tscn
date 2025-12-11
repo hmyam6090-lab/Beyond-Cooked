@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckfxk4cxg5kf7"]
+
+[ext_resource type="Script" uid="uid://kujbyvurf7a3" path="res://scene_objects/Non-Interactables/ingredient_panel.gd" id="1_xhg5c"]
+[ext_resource type="Texture2D" uid="uid://3wgwuugakbq6" path="res://Assets/UI/Ingredients/buns.png" id="2_vofif"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuw1y"]
+bg_color = Color(0.9137255, 0.9137255, 0.9137255, 1)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 1
+
+[node name="IngredientPanel" type="Control" node_paths=PackedStringArray("ingredient_icon")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xhg5c")
+ingredient_icon = NodePath("TextureRect")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuw1y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -12.0
+offset_right = 56.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vofif")
+expand_mode = 1

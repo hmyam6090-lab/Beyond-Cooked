@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj3oygo6a6aia"
 path.s3tc="res://.godot/imported/black_plastic.png-6a14b1f0deb431933e02eaa0b1c11f43.s3tc.ctex"
+path.etc2="res://.godot/imported/black_plastic.png-6a14b1f0deb431933e02eaa0b1c11f43.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/dish_dryer/black_plastic.png"
-dest_files=["res://.godot/imported/black_plastic.png-6a14b1f0deb431933e02eaa0b1c11f43.s3tc.ctex"]
+dest_files=["res://.godot/imported/black_plastic.png-6a14b1f0deb431933e02eaa0b1c11f43.s3tc.ctex", "res://.godot/imported/black_plastic.png-6a14b1f0deb431933e02eaa0b1c11f43.etc2.ctex"]
 
 [params]
 

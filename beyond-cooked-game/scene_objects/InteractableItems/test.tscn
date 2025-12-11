@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hgsnr3y2rn3i"]
+
+[ext_resource type="PackedScene" uid="uid://dgbsmue5w3odj" path="res://scene_objects/InteractableItems/SpawnerCrate.tscn" id="1_lp30e"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SpawnerCrate" parent="." instance=ExtResource("1_lp30e")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9599277, 0.2802479, 0, -0.2802479, 0.9599277, 0, 1.0762274, 1.3202809)

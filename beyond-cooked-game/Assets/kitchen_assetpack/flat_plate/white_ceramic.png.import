@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgm2ku1lgtfi1"
 path.s3tc="res://.godot/imported/white_ceramic.png-306577c60e9b7639c202ea77a8befe7d.s3tc.ctex"
+path.etc2="res://.godot/imported/white_ceramic.png-306577c60e9b7639c202ea77a8befe7d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/flat_plate/white_ceramic.png"
-dest_files=["res://.godot/imported/white_ceramic.png-306577c60e9b7639c202ea77a8befe7d.s3tc.ctex"]
+dest_files=["res://.godot/imported/white_ceramic.png-306577c60e9b7639c202ea77a8befe7d.s3tc.ctex", "res://.godot/imported/white_ceramic.png-306577c60e9b7639c202ea77a8befe7d.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch0mchpljl3ky"
 path.s3tc="res://.godot/imported/fridge_dirty_white_metal.png-70e318bc08261d9b796408774ab71267.s3tc.ctex"
+path.etc2="res://.godot/imported/fridge_dirty_white_metal.png-70e318bc08261d9b796408774ab71267.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/fridge/fridge_dirty_white_metal.png"
-dest_files=["res://.godot/imported/fridge_dirty_white_metal.png-70e318bc08261d9b796408774ab71267.s3tc.ctex"]
+dest_files=["res://.godot/imported/fridge_dirty_white_metal.png-70e318bc08261d9b796408774ab71267.s3tc.ctex", "res://.godot/imported/fridge_dirty_white_metal.png-70e318bc08261d9b796408774ab71267.etc2.ctex"]
 
 [params]
 

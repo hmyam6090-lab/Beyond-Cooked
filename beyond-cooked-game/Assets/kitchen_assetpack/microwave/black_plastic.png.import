@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6nx1mrp1u37d"
 path.s3tc="res://.godot/imported/black_plastic.png-b3067f019c5027f1f9a481938a2f8496.s3tc.ctex"
+path.etc2="res://.godot/imported/black_plastic.png-b3067f019c5027f1f9a481938a2f8496.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/microwave/black_plastic.png"
-dest_files=["res://.godot/imported/black_plastic.png-b3067f019c5027f1f9a481938a2f8496.s3tc.ctex"]
+dest_files=["res://.godot/imported/black_plastic.png-b3067f019c5027f1f9a481938a2f8496.s3tc.ctex", "res://.godot/imported/black_plastic.png-b3067f019c5027f1f9a481938a2f8496.etc2.ctex"]
 
 [params]
 

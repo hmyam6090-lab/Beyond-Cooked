@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c470jwweftdkp"
 path.s3tc="res://.godot/imported/black_plastic.png-93dd9197d1619e399d0255d146c38c4f.s3tc.ctex"
+path.etc2="res://.godot/imported/black_plastic.png-93dd9197d1619e399d0255d146c38c4f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/toaster/black_plastic.png"
-dest_files=["res://.godot/imported/black_plastic.png-93dd9197d1619e399d0255d146c38c4f.s3tc.ctex"]
+dest_files=["res://.godot/imported/black_plastic.png-93dd9197d1619e399d0255d146c38c4f.s3tc.ctex", "res://.godot/imported/black_plastic.png-93dd9197d1619e399d0255d146c38c4f.etc2.ctex"]
 
 [params]
 

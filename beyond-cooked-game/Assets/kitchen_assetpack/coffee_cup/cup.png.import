@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hijdjyfhqivy"
 path.s3tc="res://.godot/imported/cup.png-079eee880685ea3d703908ba65d245b2.s3tc.ctex"
+path.etc2="res://.godot/imported/cup.png-079eee880685ea3d703908ba65d245b2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/coffee_cup/cup.png"
-dest_files=["res://.godot/imported/cup.png-079eee880685ea3d703908ba65d245b2.s3tc.ctex"]
+dest_files=["res://.godot/imported/cup.png-079eee880685ea3d703908ba65d245b2.s3tc.ctex", "res://.godot/imported/cup.png-079eee880685ea3d703908ba65d245b2.etc2.ctex"]
 
 [params]
 

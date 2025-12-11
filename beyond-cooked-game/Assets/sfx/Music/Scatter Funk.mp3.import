@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by7v4uomfn1ec"
+path="res://.godot/imported/Scatter Funk.mp3-35ec3619f71df6c93779875f3c2bd7f3.mp3str"
+
+[deps]
+
+source_file="res://Assets/sfx/Music/Scatter Funk.mp3"
+dest_files=["res://.godot/imported/Scatter Funk.mp3-35ec3619f71df6c93779875f3c2bd7f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

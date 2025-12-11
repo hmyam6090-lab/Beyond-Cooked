@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcf5sc86cscuk"
 path.s3tc="res://.godot/imported/сorner_kitchen_pale_wood.png-69fc040a3cf234988528a2cb025c7970.s3tc.ctex"
+path.etc2="res://.godot/imported/сorner_kitchen_pale_wood.png-69fc040a3cf234988528a2cb025c7970.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/сorner_kitchen/сorner_kitchen_pale_wood.png"
-dest_files=["res://.godot/imported/сorner_kitchen_pale_wood.png-69fc040a3cf234988528a2cb025c7970.s3tc.ctex"]
+dest_files=["res://.godot/imported/сorner_kitchen_pale_wood.png-69fc040a3cf234988528a2cb025c7970.s3tc.ctex", "res://.godot/imported/сorner_kitchen_pale_wood.png-69fc040a3cf234988528a2cb025c7970.etc2.ctex"]
 
 [params]
 

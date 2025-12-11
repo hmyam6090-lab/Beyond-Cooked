@@ -4,42 +4,40 @@ extends CharacterBody3D
 @export var walkSpeed := 3.0
 @export var sprintSpeed := 6.0
 @export var jumpForce := 4.8
-@export var gravity := 9.8
+@export var gravity := 11
 @export var acceleration_ground := 10.0
 @export var acceleration_air := 4.0
+
+@export var flashlight : SpotLight3D
 
 var speed := 0.0
 var inputDir := Vector2.ZERO
 
-#Headbob
 const BOB_FREQ := 1
 const BOB_AMP := 0.08
 var t_bob := 0.0
 
-#Camera FOV
 const BASE_FOV := 75.0
 var FOV_CHANGE := 1.5
 
-#STAMINA SYSTEM
 @export_group("Stamina")
 @export var maxStamina := 100.0
-@export var staminaDrainRate := 40.0     
+@export var staminaDrainRate := 20.0     
 @export var staminaRegenRate := 15.0      
 @export var regenDelay := 0.8             
 @export var exhaustionSlowdown := true    
 
-@onready var staminaBar = $CanvasLayer/UI/StaminaBar
+@onready var staminaBar = $CanvasLayer/StaminaBar
 
 var stamina := 100.0
 var canRegen := true
 var regenTimer := 0.0
 
-#HEALTH SYSTEM
 @export_group("Health")
 @export var maxHealth := 100.0
 var health := 100.0
 
-@onready var healthBar = $CanvasLayer/UI/HealthBar
+@onready var healthBar = $CanvasLayer/HealthBar
 
 @export_group("Camera")
 @export var mouseSens = Vector2(0.2, 0.2)
@@ -58,8 +56,13 @@ var health := 100.0
 @onready var interactRay = $Head/Camera3D/InteractRay
 var heldObject: RigidBody3D
 
+@export_group("Interactable Statics")
+var interact_target: Node = null
+
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	self.set_meta("player", self)
 
 
 func _unhandled_input(event):
@@ -72,15 +75,15 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	handle_holding_objects()
 
-	# Gravity
+	if Input.is_action_just_pressed("drop_item"):
+		flashlight.visible = !flashlight.visible
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jumpForce
 
-	# Sprint
 	var wantsToSprint = Input.is_action_pressed("sprint") and inputDir.length() > 0.1
 	staminaBar.set_stamina(stamina, maxStamina)
 	healthBar.set_health(health, maxHealth)
@@ -110,20 +113,16 @@ func _physics_process(delta):
 		FOV_CHANGE = 0.25
 		speed = walkSpeed * 0.5
 
-	# Movement input
 	inputDir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
 
-	# Dynamic movement feel
 	var accel = acceleration_ground if is_on_floor() else acceleration_air
 	velocity.x = lerp(velocity.x, direction.x * speed, accel * delta)
 	velocity.z = lerp(velocity.z, direction.z * speed, accel * delta)
 
-	# Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
 
-	# FOV Boost
 	var vel_clamped = clamp(velocity.length(), 1.0, sprintSpeed * 2)
 	var target_fov = BASE_FOV + FOV_CHANGE * vel_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
@@ -138,7 +137,7 @@ func _headbob(time) -> Vector3:
 	return pos
 
 #Physical Interaction System (Should really organize this into a different file)		
-func set_held_object(body: Node3D):
+func set_held_object(body: RigidBody3D):
 	heldObject = body
 
 func drop_held_object():
@@ -150,25 +149,43 @@ func throw_held_object():
 	obj.apply_central_impulse(-camera.global_transform.basis.z * throwForce * 10)
 	
 func handle_holding_objects():
-	if Input.is_action_just_pressed("throw"):
-		if heldObject != null: throw_held_object()
-	
+	if Input.is_action_just_pressed("throw") and heldObject:
+		throw_held_object()
+
 	if Input.is_action_just_pressed("interact_p"):
-		if heldObject != null: drop_held_object()
-		elif interactRay.is_colliding(): 
-			print(interactRay.get_collider())
+		if heldObject:
+			drop_held_object()
+		elif interactRay.is_colliding():
 			var target = interactRay.get_collider()
-			if target is RigidBody3D: set_held_object(target)
-	
-	if heldObject != null:
+			if target is RigidBody3D:
+				set_held_object(target)
+
+				if target.has_meta("spawner_crate"):
+					target.get_meta("spawner_crate")._on_item_taken()
+
+	if heldObject:
 		var targetPos = camera.global_transform.origin + (camera.global_basis * Vector3(0, 0, -followDistance))
 		var objectPos = heldObject.global_transform.origin
-		heldObject.linear_velocity = (targetPos - objectPos) * followSpeed
-		
+
+		if heldObject is RigidBody3D:
+			heldObject.linear_velocity = (targetPos - objectPos) * followSpeed
+
+			if heldObject.Data and "HoldRotationOffset" in heldObject.Data:
+				var offset = heldObject.Data.HoldRotationOffset
+				heldObject.global_rotation = camera.global_rotation + offset * (PI/180)
+		else:
+			var newTransform = heldObject.global_transform
+			newTransform.origin = targetPos
+			heldObject.global_transform = newTransform
+
 		if heldObject.global_position.distance_to(camera.global_position) > maxDistanceFromCamera:
 			drop_held_object()
-		if dropBelowPlayer && groundRay.isColliding():
-			if groundRay.get_collider() == heldObject: drop_held_object()
+
+		if dropBelowPlayer and groundRay.isColliding():
+			if groundRay.get_collider() == heldObject:
+				drop_held_object()
+
+
 
 func get_stamina_percent() -> float:
 	return stamina / maxStamina
@@ -180,7 +197,6 @@ func take_damage(amount: float):
 
 func die():
 	print("Player has died!")
-	# TODO: Add respawn, reload level, animation, etc
 	
 func get_health_percent() -> float:
 	return health / maxHealth

@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=17 format=3 uid="uid://nd7fv8pa5spx"]
+
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_tyspk"]
+[ext_resource type="Texture2D" uid="uid://3m3xdpnsvxu4" path="res://Assets/UI/Dishes/burger.png" id="1_yi13t"]
+[ext_resource type="Texture2D" uid="uid://3wgwuugakbq6" path="res://Assets/UI/Ingredients/buns.png" id="2_1blv1"]
+[ext_resource type="Script" uid="uid://uxtc1tmwwgqx" path="res://Scripts/RecipeData.gd" id="2_lq2ui"]
+[ext_resource type="PackedScene" uid="uid://d3qaqx42y4ck0" path="res://scene_objects/InteractableItems/buns.tscn" id="3_js2c8"]
+[ext_resource type="Texture2D" uid="uid://bhxe1qdf8fx2g" path="res://Assets/UI/Ingredients/cooked_patty.png" id="4_rkt83"]
+[ext_resource type="PackedScene" uid="uid://c1lhr53odia8c" path="res://scene_objects/InteractableItems/cooked_patty.tscn" id="5_avojm"]
+[ext_resource type="Texture2D" uid="uid://da0764gsnahtf" path="res://Assets/UI/Ingredients/lettuce.png" id="6_rkt83"]
+[ext_resource type="PackedScene" uid="uid://db2casru5ngel" path="res://scene_objects/InteractableItems/lettuce_leaf.tscn" id="7_avojm"]
+[ext_resource type="Texture2D" uid="uid://bkmj7sx8pt3gx" path="res://Assets/UI/Ingredients/cheese_slice.png" id="8_vuwv6"]
+[ext_resource type="PackedScene" uid="uid://d1i5mphx6ocbu" path="res://scene_objects/InteractableItems/cheese_slice.tscn" id="9_irsdn"]
+[ext_resource type="PackedScene" uid="uid://b4gm7rnho0045" path="res://Resources/cheese_burger.tscn" id="11_yi13t"]
+
+[sub_resource type="Resource" id="Resource_vuwv6"]
+script = ExtResource("1_tyspk")
+ItemName = "Buns"
+Icon = ExtResource("2_1blv1")
+ModelScene = ExtResource("3_js2c8")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_irsdn"]
+script = ExtResource("1_tyspk")
+ItemName = "Cooked Patty"
+Icon = ExtResource("4_rkt83")
+ModelScene = ExtResource("5_avojm")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_yi13t"]
+script = ExtResource("1_tyspk")
+ItemName = "Lettuce Leaf"
+Icon = ExtResource("6_rkt83")
+ModelScene = ExtResource("7_avojm")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_5l6hv"]
+script = ExtResource("1_tyspk")
+ItemName = "Cheese Slice"
+Icon = ExtResource("8_vuwv6")
+ModelScene = ExtResource("9_irsdn")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[resource]
+script = ExtResource("2_lq2ui")
+recipe_name = "CheeseBurger"
+cook_time = 10.0
+required_ingredients = Array[ExtResource("1_tyspk")]([SubResource("Resource_vuwv6"), SubResource("Resource_irsdn"), SubResource("Resource_yi13t"), SubResource("Resource_5l6hv")])
+result_scene = ExtResource("11_yi13t")
+dish_icon = ExtResource("1_yi13t")
+reward = 30
+time_limit = 90.0
+metadata/_custom_type_script = "uid://uxtc1tmwwgqx"

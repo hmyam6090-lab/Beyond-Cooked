@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhhpgv5pvkhy8"
 path.s3tc="res://.godot/imported/grey_plastic.png-d2af994b4f043773abe9f686e137636c.s3tc.ctex"
+path.etc2="res://.godot/imported/grey_plastic.png-d2af994b4f043773abe9f686e137636c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/rack/grey_plastic.png"
-dest_files=["res://.godot/imported/grey_plastic.png-d2af994b4f043773abe9f686e137636c.s3tc.ctex"]
+dest_files=["res://.godot/imported/grey_plastic.png-d2af994b4f043773abe9f686e137636c.s3tc.ctex", "res://.godot/imported/grey_plastic.png-d2af994b4f043773abe9f686e137636c.etc2.ctex"]
 
 [params]
 

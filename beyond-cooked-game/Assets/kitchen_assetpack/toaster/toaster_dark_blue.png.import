@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7hjq0iac1f80"
 path.s3tc="res://.godot/imported/toaster_dark_blue.png-87511ec585f4c73cd6fe40f98fd7f58f.s3tc.ctex"
+path.etc2="res://.godot/imported/toaster_dark_blue.png-87511ec585f4c73cd6fe40f98fd7f58f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/toaster/toaster_dark_blue.png"
-dest_files=["res://.godot/imported/toaster_dark_blue.png-87511ec585f4c73cd6fe40f98fd7f58f.s3tc.ctex"]
+dest_files=["res://.godot/imported/toaster_dark_blue.png-87511ec585f4c73cd6fe40f98fd7f58f.s3tc.ctex", "res://.godot/imported/toaster_dark_blue.png-87511ec585f4c73cd6fe40f98fd7f58f.etc2.ctex"]
 
 [params]
 

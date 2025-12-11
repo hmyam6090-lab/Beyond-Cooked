@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bovs22mtq1hmo"
+path="res://.godot/imported/wall_decorated.obj-4c17749efd8d117bbcfb246d315523ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_decorated.obj-4c17749efd8d117bbcfb246d315523ef.mesh"]
+
+source_file="res://Assets/TutorialKitchen/Assets/obj/wall_decorated.obj"
+dest_files=["res://.godot/imported/wall_decorated.obj-4c17749efd8d117bbcfb246d315523ef.mesh", "res://.godot/imported/wall_decorated.obj-4c17749efd8d117bbcfb246d315523ef.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

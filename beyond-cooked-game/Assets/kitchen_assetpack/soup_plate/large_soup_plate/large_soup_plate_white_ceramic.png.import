@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://caf0n3ml75gay"
 path.s3tc="res://.godot/imported/large_soup_plate_white_ceramic.png-68d476dff231a41a9cd486872335d9ed.s3tc.ctex"
+path.etc2="res://.godot/imported/large_soup_plate_white_ceramic.png-68d476dff231a41a9cd486872335d9ed.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/soup_plate/large_soup_plate/large_soup_plate_white_ceramic.png"
-dest_files=["res://.godot/imported/large_soup_plate_white_ceramic.png-68d476dff231a41a9cd486872335d9ed.s3tc.ctex"]
+dest_files=["res://.godot/imported/large_soup_plate_white_ceramic.png-68d476dff231a41a9cd486872335d9ed.s3tc.ctex", "res://.godot/imported/large_soup_plate_white_ceramic.png-68d476dff231a41a9cd486872335d9ed.etc2.ctex"]
 
 [params]
 

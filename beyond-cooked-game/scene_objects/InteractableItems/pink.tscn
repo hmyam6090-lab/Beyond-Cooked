@@ -8,7 +8,6 @@
 script = ExtResource("3_34c2i")
 ItemName = "Pink"
 Icon = ExtResource("2_aswf0")
-ItemModelPrefab = null
 metadata/_custom_type_script = "uid://vxwff2w70g"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_km8qt"]
@@ -36,7 +35,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 3.6
 
-[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+[node name="Pink" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_6w2u7")

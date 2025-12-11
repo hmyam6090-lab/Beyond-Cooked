@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://0gv4l8i0cdpy"]
+
+[ext_resource type="Script" uid="uid://cjx7q2q5nhctx" path="res://SubmitStation.gd" id="1_1k4ge"]
+[ext_resource type="ArrayMesh" uid="uid://w7nycghgijdo" path="res://Assets/TutorialKitchen/Assets/obj/extractorhood.obj" id="2_rr4nr"]
+[ext_resource type="AudioStream" uid="uid://de5urdiycfa1w" path="res://Assets/sfx/Submit/cash_reg.mp3" id="3_ump6s"]
+[ext_resource type="AudioStream" uid="uid://brd8l78vogufm" path="res://Assets/sfx/Submit/wrong.mp3" id="4_twx0c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rr4nr"]
+size = Vector3(3.4856071, 5, 3.4140587)
+
+[node name="SubmitStation" type="Area3D"]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_1k4ge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109529495, -2, -0.41731834)
+shape = SubResource("BoxShape3D_rr4nr")
+disabled = true
+
+[node name="Extractorhood" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6169672, -0.64938664)
+mesh = ExtResource("2_rr4nr")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Success" type="AudioStreamPlayer3D" parent="SFX"]
+stream = ExtResource("3_ump6s")
+
+[node name="Failure" type="AudioStreamPlayer3D" parent="SFX"]
+stream = ExtResource("4_twx0c")
+
+[connection signal="body_entered" from="." to="." method="_on_SubmitStation_body_entered"]

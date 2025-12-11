@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://n86a6dkaougg"
 path.s3tc="res://.godot/imported/black_wood.png-94c2c3df09b5b7702821a7509b54d5ae.s3tc.ctex"
+path.etc2="res://.godot/imported/black_wood.png-94c2c3df09b5b7702821a7509b54d5ae.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/wall_cabinet/black_wood.png"
-dest_files=["res://.godot/imported/black_wood.png-94c2c3df09b5b7702821a7509b54d5ae.s3tc.ctex"]
+dest_files=["res://.godot/imported/black_wood.png-94c2c3df09b5b7702821a7509b54d5ae.s3tc.ctex", "res://.godot/imported/black_wood.png-94c2c3df09b5b7702821a7509b54d5ae.etc2.ctex"]
 
 [params]
 

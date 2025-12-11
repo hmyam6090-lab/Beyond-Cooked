@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dco0qp1gxsgvp"
 path.s3tc="res://.godot/imported/slenderman_0.png-6d5684616db21538fe4b646d989a9d90.s3tc.ctex"
+path.etc2="res://.godot/imported/slenderman_0.png-6d5684616db21538fe4b646d989a9d90.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Mob/slenderman_0.png"
-dest_files=["res://.godot/imported/slenderman_0.png-6d5684616db21538fe4b646d989a9d90.s3tc.ctex"]
+dest_files=["res://.godot/imported/slenderman_0.png-6d5684616db21538fe4b646d989a9d90.s3tc.ctex", "res://.godot/imported/slenderman_0.png-6d5684616db21538fe4b646d989a9d90.etc2.ctex"]
 
 [params]
 

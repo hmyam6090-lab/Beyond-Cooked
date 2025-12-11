@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0r055cqmlcwh"
 path.s3tc="res://.godot/imported/green_liquid.png-34af4882240d913d9a464f0b4c1fc2ae.s3tc.ctex"
+path.etc2="res://.godot/imported/green_liquid.png-34af4882240d913d9a464f0b4c1fc2ae.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/kitchen_assetpack/detergent/green_liquid.png"
-dest_files=["res://.godot/imported/green_liquid.png-34af4882240d913d9a464f0b4c1fc2ae.s3tc.ctex"]
+dest_files=["res://.godot/imported/green_liquid.png-34af4882240d913d9a464f0b4c1fc2ae.s3tc.ctex", "res://.godot/imported/green_liquid.png-34af4882240d913d9a464f0b4c1fc2ae.etc2.ctex"]
 
 [params]
 
