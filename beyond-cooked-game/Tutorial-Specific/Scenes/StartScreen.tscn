@@ -1,0 +1,142 @@
+[gd_scene load_steps=18 format=3 uid="uid://dik8waq7r3w81"]
+
+[ext_resource type="Texture2D" uid="uid://c1hsc48rkhw5r" path="res://Assets/UI/logo.png" id="1_b3ebb"]
+[ext_resource type="Script" uid="uid://c402fwcodvfsy" path="res://Tutorial-Specific/Scenes/start_screen.gd" id="1_n8bqd"]
+[ext_resource type="Shader" uid="uid://ct7sxhtdrpk86" path="res://Scripts/space_sky.gdshader" id="1_tq3vm"]
+[ext_resource type="MeshLibrary" uid="uid://x64d7hn6n7ce" path="res://Assets/TutorialKitchen/MeshLib/TutorialKitchenGrid.tres" id="2_70bvd"]
+[ext_resource type="ArrayMesh" uid="uid://bovs22mtq1hmo" path="res://Assets/TutorialKitchen/Assets/obj/wall_decorated.obj" id="3_c1ni8"]
+[ext_resource type="ArrayMesh" uid="uid://dlsfscyi0ghdn" path="res://Assets/TutorialKitchen/Assets/obj/table_round_A_decorated.obj" id="4_tq3vm"]
+[ext_resource type="Script" uid="uid://7yolysca0d5j" path="res://Tutorial-Specific/Scenes/homescreen_cam.gd" id="4_u4r7k"]
+[ext_resource type="PackedScene" uid="uid://cbtq76bxe0ikk" path="res://scene_objects/Non-Interactables/candles.tscn" id="5_70bvd"]
+[ext_resource type="PackedScene" uid="uid://wfg3ck8x7s57" path="res://scene_objects/Non-Interactables/fire.tscn" id="6_c1ni8"]
+[ext_resource type="PackedScene" uid="uid://o0y1766e2hb3" path="res://scene_objects/Mobs/lettuce_fairy.tscn" id="8_yvxel"]
+[ext_resource type="PackedScene" uid="uid://cr8ocrv6mmwx1" path="res://Tutorial-Specific/Scenes/MenuButton.tscn" id="11_q1m1h"]
+[ext_resource type="AudioStream" uid="uid://by7v4uomfn1ec" path="res://Assets/sfx/Music/Scatter Funk.mp3" id="12_04rar"]
+[ext_resource type="PackedScene" uid="uid://cxuiwvfu7cflp" path="res://Resources/Level Select.tscn" id="13_fav2v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvxel"]
+shader = ExtResource("1_tq3vm")
+shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
+shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 2.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_speed = 1.0
+shader_parameter/stars_scale = 1.0
+shader_parameter/stars_opacity = 1.0
+shader_parameter/overwritten_time = 0.0
+
+[sub_resource type="Sky" id="Sky_tq3vm"]
+sky_material = SubResource("ShaderMaterial_yvxel")
+
+[sub_resource type="Environment" id="Environment_yvxel"]
+background_mode = 2
+sky = SubResource("Sky_tq3vm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_yvxel"]
+vertices = PackedVector3Array(-0.51278496, -0.060241222, -2.2627857, -2.012785, -0.060241222, -0.012785673, -2.012785, -0.060241222, 0.7372143, 0.48721504, -0.060241222, 2.2372143, 2.237215, -0.060241222, -0.26278567)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4)]
+cell_height = 0.01
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_n8bqd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yvxel")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.40829557, 0, 0.28860825, 0, 0.5, 0, -0.28860825, 0, 0.40829557, 5.3142543, 4.6572657, 2.21026)
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_b3ebb")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_70bvd")
+data = {
+"cells": PackedInt32Array(2, 1, 1441815, 2, 65535, 1441815, 4, 65535, 1441815, 4, 1, 1441815, 2, 65534, 655499, 4, 65534, 655499, 5, 65535, 1048715, 5, 1, 1048715, 1, 65535, 1048715, 1, 1, 1048715)
+}
+
+[node name="Camera3D" type="Camera3D" parent="GridMap"]
+transform = Transform3D(0.9918478, -0.025875667, 0.124773346, -0.017705938, 0.94168293, 0.3360355, -0.12619206, -0.33550528, 0.933548, 7.541034, 3.4450953, 6.88411)
+script = ExtResource("4_u4r7k")
+rotation_amount = null
+position_shift = null
+smoothness = null
+
+[node name="GridMap2" type="GridMap" parent="GridMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.99, 0)
+mesh_library = ExtResource("2_70bvd")
+data = {
+"cells": PackedInt32Array(1, 1, 1441931, 1, 65535, 1441931, 2, 65534, 655499, 4, 65534, 655499, 5, 65535, 1048715, 5, 1, 1048715)
+}
+
+[node name="WallDecorated" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2521296, 1.025531, -2.698866)
+mesh = ExtResource("3_c1ni8")
+
+[node name="TableRoundADecorated" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.692412, 1.499999, 3.0983558)
+mesh = ExtResource("4_tq3vm")
+
+[node name="lit_static_candle" parent="." instance=ExtResource("5_70bvd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.835477, 2.41374, 3.884674)
+
+[node name="Fire" parent="." instance=ExtResource("6_c1ni8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7649484, 2.2596169, -0.92716664)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12621498, 0)
+light_color = Color(0.8558984, 0.26864535, 0.2147542, 1)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(-0.84215134, 0, -0.53924125, 0, 1, 0, 0.53924125, 0, -0.84215134, 5, 1.5802412, 3)
+navigation_mesh = SubResource("NavigationMesh_yvxel")
+
+[node name="LettuceFairy" parent="." instance=ExtResource("8_yvxel")]
+transform = Transform3D(-0.84215134, 0, -0.53924125, 0, 1, 0, 0.53924125, 0, -0.84215134, 5, 1.5802412, 3)
+
+[node name="PlayButton" parent="." instance=ExtResource("11_q1m1h")]
+transform = Transform3D(1.4541423, 0, -0.36806262, 0, 1.4999999, 0, 0.36806262, 0, 1.4541423, 9.188895, 5.3987536, 1.2122146)
+
+[node name="QuitButton" parent="." instance=ExtResource("11_q1m1h")]
+transform = Transform3D(1.3951461, 0, -0.55096966, 0, 1.4999999, 0, 0.55096966, 0, 1.3951461, 9.188895, 4.379461, 1.2122146)
+label = "Quit"
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Bgmusic" type="AudioStreamPlayer3D" parent="SFX"]
+stream = ExtResource("12_04rar")
+volume_db = -20.0
+autoplay = true
+
+[node name="LevelSelect" parent="." instance=ExtResource("13_fav2v")]
+visible = false

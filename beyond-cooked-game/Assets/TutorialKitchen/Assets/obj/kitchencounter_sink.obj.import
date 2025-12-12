@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctjbrs48w20ph"
+path="res://.godot/imported/kitchencounter_sink.obj-0ba4640893c9478f093be993e8c94b88.mesh"
+
+[deps]
+
+files=["res://.godot/imported/kitchencounter_sink.obj-0ba4640893c9478f093be993e8c94b88.mesh"]
+
+source_file="res://Assets/TutorialKitchen/Assets/obj/kitchencounter_sink.obj"
+dest_files=["res://.godot/imported/kitchencounter_sink.obj-0ba4640893c9478f093be993e8c94b88.mesh", "res://.godot/imported/kitchencounter_sink.obj-0ba4640893c9478f093be993e8c94b88.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

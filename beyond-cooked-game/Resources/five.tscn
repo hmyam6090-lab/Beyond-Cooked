@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckgq8i1ns6ekf"]
+
+[ext_resource type="Script" uid="uid://bw8exbne3xe57" path="res://fourth.gd" id="1_8mxoa"]
+[ext_resource type="AudioStream" uid="uid://du4dj4am6gfi0" path="res://Assets/sfx/Voicelines/BUN ROOM WITH SKELE 2.wav" id="2_kjod0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04km2"]
+size = Vector3(1, 2, 3)
+
+[node name="Five" type="Area3D"]
+script = ExtResource("1_8mxoa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_04km2")
+
+[node name="voice1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_kjod0")
+pitch_scale = 0.9
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

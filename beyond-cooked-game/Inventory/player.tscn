@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://mvo80e0r2be2"]
+
+[ext_resource type="Script" uid="uid://bcfge2hh62xeu" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bvrd16fplgtn0" path="res://Assets/PlayerCharacter/repo_demo.glb" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dlvfexhd1dlol" path="res://Assets/UI/crosshair.png" id="3_fd4e3"]
+[ext_resource type="Script" uid="uid://bkuckaa2ukp15" path="res://Inventory/PlayerInteractionHandler.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://bgbfuh2b8x3pn" path="res://Scripts/stamina_bar.gd" id="4_qqcod"]
+[ext_resource type="Script" uid="uid://d10t0xo24pdf7" path="res://Scripts/health_bar.gd" id="5_igrcy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqtel"]
+radius = 0.3
+height = 1.75
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("flashlight", "groundRay") groups=["player"]]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0.14817882, 0)
+script = ExtResource("1_onrkg")
+flashlight = NodePath("Head/Camera3D/Spotlight/SpotLight3D")
+groundRay = NodePath("RayCast3D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fd4e3")
+
+[node name="StaminaBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -206.0
+offset_right = 40.0
+grow_vertical = 0
+value = 100.0
+fill_mode = 3
+script = ExtResource("4_qqcod")
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(0.9468747, 0, 0.22488263, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = -206.0
+offset_right = 103.0
+grow_vertical = 0
+value = 100.0
+fill_mode = 3
+script = ExtResource("5_igrcy")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("2_i3pqv")]
+transform = Transform3D(-0.9201225, 0, -0.3916305, 0, 1, 0, 0.3916305, 0, -0.9201225, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7782316, 0)
+shape = SubResource("CapsuleShape3D_hqtel")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_vgqql")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.795205, 0)
+shape = SubResource("SphereShape3D_cvnsp")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1992767, -0.2124618)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25038004, -0.2912409)
+
+[node name="Tools Manager" type="Node3D" parent="Head/Camera3D"]
+
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.051073313, 0.2912409)
+target_position = Vector3(0, 0, 3)
+
+[node name="Spotlight" type="Node3D" parent="Head/Camera3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/Spotlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2706846)
+light_energy = 2.0
+spot_range = 10.0
+spot_attenuation = 2.0
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnObjectExitedArea"]

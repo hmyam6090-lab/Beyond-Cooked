@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=17 format=3 uid="uid://cfdlw8wbsfdwa"]
+
+[ext_resource type="Texture2D" uid="uid://bpm87bmvre4y6" path="res://Assets/UI/Dishes/pizza.png" id="1_7i1jm"]
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_rex8c"]
+[ext_resource type="Texture2D" uid="uid://b83v8aep66f6c" path="res://Assets/UI/Ingredients/sliced_onions.png" id="2_5j0nb"]
+[ext_resource type="Script" uid="uid://uxtc1tmwwgqx" path="res://Scripts/RecipeData.gd" id="2_xgjl5"]
+[ext_resource type="PackedScene" uid="uid://cdwpx81teorpy" path="res://scene_objects/InteractableItems/sliced_onion.tscn" id="3_wr2jj"]
+[ext_resource type="Texture2D" uid="uid://ciqvgm3b6rbpg" path="res://Assets/UI/Ingredients/sliced_tomato.png" id="4_dmdpj"]
+[ext_resource type="PackedScene" uid="uid://bmdmo2ucjmbga" path="res://scene_objects/InteractableItems/sliced_tomato.tscn" id="5_chu5t"]
+[ext_resource type="Texture2D" uid="uid://2j888ephbvpt" path="res://Assets/UI/Ingredients/cheese.png" id="6_yx7jk"]
+[ext_resource type="PackedScene" uid="uid://driijy75nm8fw" path="res://scene_objects/InteractableItems/cheese.tscn" id="7_e5351"]
+[ext_resource type="Texture2D" uid="uid://3wgwuugakbq6" path="res://Assets/UI/Ingredients/buns.png" id="8_k7ln7"]
+[ext_resource type="PackedScene" uid="uid://dkuj3ushycxix" path="res://Assets/Ingredients/Buns.glb" id="9_ijyp3"]
+[ext_resource type="PackedScene" uid="uid://cmcsqeuen5udw" path="res://scene_objects/InteractableItems/pizza.tscn" id="10_ijyp3"]
+
+[sub_resource type="Resource" id="Resource_dmdpj"]
+script = ExtResource("1_rex8c")
+ItemName = "Sliced Onion"
+Icon = ExtResource("2_5j0nb")
+ModelScene = ExtResource("3_wr2jj")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_yx7jk"]
+script = ExtResource("1_rex8c")
+ItemName = "Sliced Tomato"
+Icon = ExtResource("4_dmdpj")
+ModelScene = ExtResource("5_chu5t")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_k7ln7"]
+script = ExtResource("1_rex8c")
+ItemName = "Cheese"
+Icon = ExtResource("6_yx7jk")
+ModelScene = ExtResource("7_e5351")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="Resource" id="Resource_7i1jm"]
+script = ExtResource("1_rex8c")
+ItemName = "Buns"
+Icon = ExtResource("8_k7ln7")
+ModelScene = ExtResource("9_ijyp3")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[resource]
+script = ExtResource("2_xgjl5")
+recipe_name = "Pizza"
+cook_time = 15.0
+required_ingredients = Array[ExtResource("1_rex8c")]([SubResource("Resource_dmdpj"), SubResource("Resource_yx7jk"), SubResource("Resource_k7ln7"), SubResource("Resource_7i1jm")])
+result_scene = ExtResource("10_ijyp3")
+dish_icon = ExtResource("1_7i1jm")
+reward = 40
+time_limit = 120.0
+metadata/_custom_type_script = "uid://uxtc1tmwwgqx"

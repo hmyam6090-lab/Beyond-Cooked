@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bex3c8ub3nkfa"
+path="res://.godot/imported/fridge_A_door_top.obj-e73d0c7ee9d9114133405119662dc4fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fridge_A_door_top.obj-e73d0c7ee9d9114133405119662dc4fb.mesh"]
+
+source_file="res://Assets/TutorialKitchen/Assets/obj/fridge_A_door_top.obj"
+dest_files=["res://.godot/imported/fridge_A_door_top.obj-e73d0c7ee9d9114133405119662dc4fb.mesh", "res://.godot/imported/fridge_A_door_top.obj-e73d0c7ee9d9114133405119662dc4fb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

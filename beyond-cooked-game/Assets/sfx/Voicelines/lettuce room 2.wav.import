@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr6ddddpamc5o"
+path="res://.godot/imported/lettuce room 2.wav-d2cae843c2888e1e5bd1945d45477987.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/Voicelines/lettuce room 2.wav"
+dest_files=["res://.godot/imported/lettuce room 2.wav-d2cae843c2888e1e5bd1945d45477987.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

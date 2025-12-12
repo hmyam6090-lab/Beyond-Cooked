@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbg1mm513tf4x"
+path="res://.godot/imported/wall_lamp.obj-5e5044141fd919a2bd81be780e780c4e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_lamp.obj-5e5044141fd919a2bd81be780e780c4e.mesh"]
+
+source_file="res://Assets/kitchen_assetpack/wall_lamp/wall_lamp.obj"
+dest_files=["res://.godot/imported/wall_lamp.obj-5e5044141fd919a2bd81be780e780c4e.mesh", "res://.godot/imported/wall_lamp.obj-5e5044141fd919a2bd81be780e780c4e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,97 @@
+[gd_scene load_steps=25 format=3 uid="uid://p6d1nnfmey86"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_t7goj"]
+[ext_resource type="PackedScene" uid="uid://b7f1xf0oo7eri" path="res://scene_objects/Non-Interactables/cooking_pot.tscn" id="2_y5o33"]
+[ext_resource type="Script" uid="uid://uxtc1tmwwgqx" path="res://Scripts/RecipeData.gd" id="3_kmdf4"]
+[ext_resource type="PackedScene" uid="uid://d3qaqx42y4ck0" path="res://scene_objects/InteractableItems/buns.tscn" id="3_ytbp3"]
+[ext_resource type="PackedScene" uid="uid://driijy75nm8fw" path="res://scene_objects/InteractableItems/cheese.tscn" id="4_kmdf4"]
+[ext_resource type="Resource" uid="uid://nd7fv8pa5spx" path="res://Resources/CheeseBurger.tres" id="4_rigux"]
+[ext_resource type="PackedScene" uid="uid://db2casru5ngel" path="res://scene_objects/InteractableItems/lettuce_leaf.tscn" id="5_kmdf4"]
+[ext_resource type="PackedScene" uid="uid://d1i5mphx6ocbu" path="res://scene_objects/InteractableItems/cheese_slice.tscn" id="5_rigux"]
+[ext_resource type="Resource" uid="uid://cfdlw8wbsfdwa" path="res://Resources/Pizza.tres" id="5_xjl1t"]
+[ext_resource type="Resource" uid="uid://pcw77ta7nc62" path="res://Resources/Soup.tres" id="6_g3k7t"]
+[ext_resource type="PackedScene" uid="uid://csl5y0mxfqa30" path="res://scene_objects/InteractableItems/cleaver.tscn" id="6_xjl1t"]
+[ext_resource type="PackedScene" uid="uid://c1lhr53odia8c" path="res://scene_objects/InteractableItems/cooked_patty.tscn" id="7_g3k7t"]
+[ext_resource type="PackedScene" uid="uid://dqoclhye2f45d" path="res://scene_objects/InteractableItems/ham.tscn" id="8_3wecc"]
+[ext_resource type="PackedScene" uid="uid://b1rvtamuilcos" path="res://scene_objects/InteractableItems/onion.tscn" id="9_moo6m"]
+[ext_resource type="PackedScene" uid="uid://r4ul67j0yg87" path="res://scene_objects/InteractableItems/potato.tscn" id="10_olu0f"]
+[ext_resource type="PackedScene" uid="uid://cdwpx81teorpy" path="res://scene_objects/InteractableItems/sliced_onion.tscn" id="11_fviie"]
+[ext_resource type="PackedScene" uid="uid://bmdmo2ucjmbga" path="res://scene_objects/InteractableItems/sliced_tomato.tscn" id="12_ynkh0"]
+[ext_resource type="PackedScene" uid="uid://chki0l1gvr0vs" path="res://scene_objects/InteractableItems/soup.tscn" id="13_ksds7"]
+[ext_resource type="PackedScene" uid="uid://cmcsqeuen5udw" path="res://scene_objects/InteractableItems/pizza.tscn" id="14_8w56t"]
+[ext_resource type="PackedScene" uid="uid://bo8c0d0wbk88p" path="res://scene_objects/InteractableItems/tomato.tscn" id="15_ki2kh"]
+[ext_resource type="Script" uid="uid://67x24h4fiuw6" path="res://Scripts/order_manager.gd" id="21_3wecc"]
+[ext_resource type="PackedScene" uid="uid://0gv4l8i0cdpy" path="res://scene_objects/InteractableItems/SubmitStation.tscn" id="22_moo6m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hoiw3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fh1ey"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(36.366, 0, 0, 0, 1, 0, 0, 0, 57.132008, 0, 0, 0)
+mesh = SubResource("BoxMesh_hoiw3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fh1ey")
+
+[node name="Player" parent="." instance=ExtResource("1_t7goj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.4437399, 0.9999981, 0.058255196)
+
+[node name="CookingPot" parent="." instance=ExtResource("2_y5o33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+recipes = Array[ExtResource("3_kmdf4")]([ExtResource("4_rigux"), ExtResource("5_xjl1t"), ExtResource("6_g3k7t")])
+
+[node name="Lettuce_half" parent="CookingPot" instance=ExtResource("5_kmdf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+
+[node name="Buns" parent="." instance=ExtResource("3_ytbp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2519274, 1, 2.1790192)
+
+[node name="Cheese" parent="." instance=ExtResource("4_kmdf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.514217, 1, 4.7478514)
+
+[node name="Cheese_Slice" parent="." instance=ExtResource("5_rigux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0430331, 1, 2.388319)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("6_xjl1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9431739, 2, 1.5952153)
+
+[node name="cooked_patty" parent="." instance=ExtResource("7_g3k7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3765836, 1, 4.8911595)
+
+[node name="Ham" parent="." instance=ExtResource("8_3wecc")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.47772527, 1, 1.835076)
+
+[node name="Onion" parent="." instance=ExtResource("9_moo6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0551553, 1, 5.104802)
+
+[node name="Potato" parent="." instance=ExtResource("10_olu0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13929157, 0.64292717, 3.5616796)
+
+[node name="SlicedOnion" parent="." instance=ExtResource("11_fviie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1751633, 0.5753412, 2.7475355)
+
+[node name="SlicedTomato" parent="." instance=ExtResource("12_ynkh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5447036, 0.54996955, 5.178375)
+
+[node name="RigidBody3D2" parent="." instance=ExtResource("13_ksds7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7810986, 0.55, -0.1818086)
+
+[node name="RigidBody3D3" parent="." instance=ExtResource("14_8w56t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27685678, 1.4838352, -1.5636926)
+
+[node name="Tomato" parent="." instance=ExtResource("15_ki2kh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8145672, 0.5499661, -1.8892157)
+
+[node name="OrderManager" type="Node" parent="."]
+script = ExtResource("21_3wecc")
+available_recipes = Array[ExtResource("3_kmdf4")]([ExtResource("6_g3k7t")])
+
+[node name="SubmitStation" parent="." node_paths=PackedStringArray("orders_manager") instance=ExtResource("22_moo6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
+orders_manager = NodePath("../OrderManager")

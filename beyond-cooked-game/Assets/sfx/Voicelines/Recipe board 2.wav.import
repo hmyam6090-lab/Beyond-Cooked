@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkoxp0j33sel5"
+path="res://.godot/imported/Recipe board 2.wav-deaac6df2d2c15cfce9d97a22267e160.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/Voicelines/Recipe board 2.wav"
+dest_files=["res://.godot/imported/Recipe board 2.wav-deaac6df2d2c15cfce9d97a22267e160.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

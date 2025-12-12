@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=4 uid="uid://r4ul67j0yg87"]
+
+[ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_cxs63"]
+[ext_resource type="Texture2D" uid="uid://hqa74ggoejrr" path="res://Assets/UI/Ingredients/potato.png" id="2_upio1"]
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="4_x7gh8"]
+[ext_resource type="ArrayMesh" uid="uid://nq6e6ak0mrrn" path="res://Assets/TutorialKitchen/Assets/obj/food_ingredient_potato.obj" id="6_641r4"]
+
+[sub_resource type="Resource" id="Resource_yv50r"]
+script = ExtResource("4_x7gh8")
+ItemName = "Potato"
+Icon = ExtResource("2_upio1")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5vw8m"]
+_surfaces = [{
+"aabb": AABB(-0.39884067, -0.44346, -0.38728967, 0.69465464, 0.87962973, 0.7755648),
+"attribute_data": PackedByteArray("FR1NP3anmz76mFM/yuHjPhfVSj+SsJ8+I9pKP6Ym6T76mFM/yuHjPiPaSj+mJuk+F9VKP5Kwnz6TcUw/8dbZPqGeUj8VO7o+oZ5SPxU7uj45fUk/PUfkPjkNUT88TuE+IzJQPzJYmT5OKFA/lWbDPiMyUD8yWJk+OX1JPz1H5D45DVE/PE7hPgnDTD/1D6o+z/ZIP5+Swz55AVI/+dafPvqYUz9gdNk+pIhQPwir2T6TcUw/8dbZPs/2SD+fksM+OQ1RPzxO4T55AVI/+dafPqSIUD8Iq9k++phTP2B02T6kiFA/CKvZPi46TT+XWJk+CK9JP0FEuj4jMlA/MliZPq4rSj/CisM+jL1PPwitnz50CEw/JPLNPjl9ST/T2dk+z/ZIP5+Swz55AVI/+dafPpBnUz95y80+HhpSP3lZwz72zkw/vFvhPvbOTD+8W+E+ritKP8KKwz4Ir0k/QUS6Ps/2SD+fksM+LjpNP5dYmT50CEw/uoTDPvbOTD+8W+E+jL1PPwitnz6QZ1M/ecvNPkTdSz/JHaY+RN1LP2Cwmz4X1Uo//B2qPgivST9BRLo+oBlMP6orpz6ch0s//16qPi46TT+XWJk+J59KP3Mtuj6EK0w/mKLEPmxaUT9Vwps+bFpRP1XCmz5I4E8/Oq2bPvjhUD/d0Jw+CcNMP4yinz7jHFE/twygPmDHTz/+msQ+oZ5SPxU7uj45fVE/LSK6Pk4oUD/+080+kGdTPw9ewz50X1I/0y/ZPtMTUj8GS90+W7BQP3Od3j6MulI/K4fePkfMTD8PuN4+jLpSPyuH3j50X1I/PZ3jPtMTUj8GS90+I9pKPz253j4dV0s/t3/dPpikSj9Rg9k+nIdLP/9eqj4nn0o/cy26PkTdSz9gsJs+CK9JP0FEuj6gGUw/qiunPhUdTT/gFKY+SOBPPzqtmz5sWlE/VcKbPoQrTD8vNbo++OFQP93QnD5sWlE/VcKbPuMcUT+3DKA+oZ5SPxU7uj5gx08/lS26Pjl9UT8tIro+HhpSP+PGzT6YpEo/u/DjPh1XSz8g7ec+I9pKP6Ym6T5HzEw/D7jePnRfUj89neM+kGdTPw9ewz5bsFA/c53ePtMTUj8GS90+jLpSPyuH3j6gGUw/qiunPpyHSz//Xqo+FR1NP3anmz5HzEw/D7jePiPaSj+mJuk+HVdLPyDt5z4="),
+"format": 34359742487,
+"index_count": 468,
+"index_data": PackedByteArray("MgA0ADMANAACADMAAgA0ADUANAAeADUAMgA2ADQANgA3ADQANAA3AB4ANgAyAAAAOAAyADMAMgA4AAAAHQA4ADMAHQAMADgANwA5AB4AHgA5ABcAOgA5ADcAOQAgABcAOQA6ACAADAAfADgAOAAfAAAAHwAMADsADAA8ADsAHwA9AAAAHwA7AD4APQAfAD4APQAhAAAAPQA+ACEAAAA/ADcAIQA/AAAAPwA6ADcAPgBAACEAPgA7AEAAIQBBAD8AQQA6AD8AIQBAAEEAOwAlAEAAGQAlADsAGQBCACUAQgAIACUAJQAIAEAAQgAmAAgAQABDAEEACABDAEAAQQBDAEQAQQBEADoAQwAIACcAQwAnAEQACABFACcARQAbACcARAAiADoAOgAiACAARAAnABoARAAaACIAGwBGACcAJwBGABoARgAbAEcAGgBGAEgARgBHAEgAGwBJAEcARwBJAEgAGwABAEkAGgAHACIAIgAHACAAGgBIAEoABwAaAEoAAQBLAEkAAQBMAEsATABNAEsATAAcAE0AGABJAEsASQAYAEgACwAYAEsACwAoABgAGAApAEgAKAApABgAKQBKAEgAKQAoAE4ASgApAE8AKQBOAE8ABwBKAE8AKAADAE4AUAAHAE8AUABPAE4ABwBQACAAIwBOAAMAIwBQAE4AIABQACMACgAjAAMAFwAgACMAIwAKACQAFwAjACQAUQAGAFIAUwAGAFEABgBUAFIAVQBTAFEAUwBVAC0AKwASAFQAEgAsAFQAVQBWAC0ALQBWAA4AVQBRABEAVgBVABEAVgBXAA4AVgARAFcADgBXAFgAEQBRAFkAUQBSAFkAEQAwAFcAEQBZADAAVwBaAFgAWABaABMAWAATAFsAWgBXAFwAWgBcABMAVwAwAFwAEwBcAF0AWQBeADAAMABeAFwAXABfAF0AXgBfAFwAXQBfADEAXwBeAGAAXwBgADEAWQAuAF4AWQBSAC4ALgANAF4AXgANAGAAUgAqAC4AUgBUACoAVAAsACoALgAqABYALgAWAA0AKgAsAGEAKgBhABYALAAPAGEAYQAPAGIADwBjAGIAYQBiAGQAFgBhAGQAFgAVAA0ADQAVAGAAFQBlAGAAYABlAAQAMQBgAAQAMQAEAGYABAAUAGYAMQBmAAkAFQAWAGcAFgBkAGcAFQBnAGgAZwBkAC8ALwBkAAUAEABnAC8AaABnABAAaQBoABAAagBsAGsAbQBvAG4A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 112,
+"vertex_data": PackedByteArray("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")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jl6d"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ynxgt"]
+radius = 0.50172055
+
+[node name="Potato" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_cxs63")
+ItemHighlightMesh = NodePath("FoodIngredientPotato/Outline")
+isIngredient = true
+Data = SubResource("Resource_yv50r")
+
+[node name="FoodIngredientPotato" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30053234, -0.07654369)
+mesh = ExtResource("6_641r4")
+
+[node name="Outline" type="MeshInstance3D" parent="FoodIngredientPotato"]
+visible = false
+mesh = SubResource("ArrayMesh_5vw8m")
+surface_material_override/0 = SubResource("StandardMaterial3D_1jl6d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30594563, 0)
+shape = SubResource("SphereShape3D_ynxgt")

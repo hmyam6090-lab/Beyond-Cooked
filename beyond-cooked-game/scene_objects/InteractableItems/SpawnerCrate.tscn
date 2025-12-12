@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgbsmue5w3odj"]
+
+[ext_resource type="Script" uid="uid://bag1lonoynv2i" path="res://SpawnerCrate.gd" id="1_w7uak"]
+[ext_resource type="ArrayMesh" uid="uid://c66jx78r1uwt2" path="res://Assets/TutorialKitchen/Assets/obj/crate.obj" id="2_0j01r"]
+[ext_resource type="PackedScene" uid="uid://dqoclhye2f45d" path="res://scene_objects/InteractableItems/ham.tscn" id="2_ead5d"]
+[ext_resource type="ArrayMesh" uid="uid://c6ifcmxgunoym" path="res://Assets/TutorialKitchen/Assets/obj/crate_lid.obj" id="3_ead5d"]
+[ext_resource type="Texture2D" uid="uid://bsv0dtj7dnopy" path="res://Assets/UI/Ingredients/ham.png" id="4_tj4d5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0j01r"]
+size = Vector3(1.9693451, 0.9831238, 1.9689941)
+
+[node name="SpawnerCrate" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_w7uak")
+item_scene = ExtResource("2_ead5d")
+item_icon = ExtResource("4_tj4d5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Crate" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("2_0j01r")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0021208525, 0.5079024, 0.0025634766)
+shape = SubResource("BoxShape3D_0j01r")
+
+[node name="CrateLid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79587674, 0)
+mesh = ExtResource("3_ead5d")
+
+[node name="Sprite3D" type="Sprite3D" parent="CrateLid"]
+transform = Transform3D(-1.3113417e-08, -0.3, -1.3113417e-08, 0, -1.3113417e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, 0, 0.21830928, 0)
+texture = ExtResource("4_tj4d5")
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6164769, 0)

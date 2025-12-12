@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr8ocrv6mmwx1"]
+
+[ext_resource type="Script" uid="uid://csxocnyu4kres" path="res://MenuButton.gd" id="1_owr54"]
+[ext_resource type="FontFile" uid="uid://xq77ko2nv4s3" path="res://Assets/UI/Avara.ttf" id="2_yqjvm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owr54"]
+size = Vector3(1.1875, 0.40731812, 0.19714355)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nrg6h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yqjvm"]
+viewport_path = NodePath("MeshInstance3D/Sprite3D/SubViewport")
+
+[node name="MenuButton" type="Node3D"]
+script = ExtResource("1_owr54")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00390625, 0.001449585, -0.045837402)
+shape = SubResource("BoxShape3D_owr54")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.188, 0, 0, 0, 0.39999998, 0, 0, 0, 0.07999999, 0, 0, 0)
+mesh = SubResource("BoxMesh_nrg6h")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(0.26, 0, 0, 0, 0.6, 0, 0, 0, 1, 0.2685697, -1.3249928, 0.71378815)
+texture = SubResource("ViewportTexture_yqjvm")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D/Sprite3D"]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="MeshInstance3D/Sprite3D/SubViewport"]
+offset_right = 273.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjvm")
+theme_override_font_sizes/font_size = 100
+text = "PLAY"

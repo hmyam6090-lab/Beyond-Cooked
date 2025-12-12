@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxtsie734wtay"]
+
+[ext_resource type="Script" uid="uid://d2ygfra4qog2s" path="res://Resources/third.gd" id="1_ugk56"]
+[ext_resource type="AudioStream" uid="uid://67n27lg1i53i" path="res://Assets/sfx/Voicelines/Quota 40.wav" id="2_t287s"]
+[ext_resource type="AudioStream" uid="uid://ddl54uep8oj13" path="res://Assets/sfx/Voicelines/A burger ver 2.wav" id="3_vd4jp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04km2"]
+size = Vector3(1, 2, 3)
+
+[node name="Third" type="Area3D"]
+script = ExtResource("1_ugk56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_04km2")
+
+[node name="voice1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_t287s")
+pitch_scale = 0.9
+
+[node name="voice2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_vd4jp")
+pitch_scale = 0.9
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

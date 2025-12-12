@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=4 uid="uid://d1i5mphx6ocbu"]
+
+[ext_resource type="Script" uid="uid://b70bex3vbq1k4" path="res://Inventory/InteractableItem.gd" id="1_6cy4g"]
+[ext_resource type="Texture2D" uid="uid://bkmj7sx8pt3gx" path="res://Assets/UI/Ingredients/cheese_slice.png" id="2_ifgag"]
+[ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="3_gvrdm"]
+[ext_resource type="ArrayMesh" uid="uid://blb1ruub2k0tp" path="res://Assets/TutorialKitchen/Assets/obj/food_ingredient_cheese_slice.obj" id="4_gpr2q"]
+
+[sub_resource type="Resource" id="Resource_qq3xu"]
+script = ExtResource("3_gvrdm")
+ItemName = "Cheese Slice"
+Icon = ExtResource("2_ifgag")
+metadata/_custom_type_script = "uid://vxwff2w70g"
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1winl"]
+_surfaces = [{
+"aabb": AABB(-0.45749035, -0.13546659, -0.46153128, 0.91556036, 0.2035396, 0.92337525),
+"attribute_data": PackedByteArray("Sre1PpqVIT+ndJg+yhcQP0q3tT6alSE/f92RPpqVIT//H68+yhcQP3/dkT6alSE/qKa0Pv5iKj8g7pI+/mIqP1Q4oj7+Yio/IO6SPv5iKj9/3ZE+mpUlP1Q4oj7+Yio/f92RPpqVJT//H68+yhcUP6imtD7+Yio/Sre1PpqVJT9Kt7U+mpUlP6imtD7+Yio/p3SYPsoXFD8g7pI+/mIqP3/dkT6alSU/Sre1PpqVJT//H68+yhcQP6d0mD7KFxA/Sre1PpqVIT//H68+yhcQP3dLoj6alSE//x+vPsoXFD90XKU+/mIqP3dLoj6alSU/p3SYPrEYLT+ndJg+yhcUPzBJpT6alSU//x+vPrEYLT+ndJg+sRgtP/8frz6xGC0/dFylPv5iKj8wSaU+mpUhP6d0mD7KFxA/f92RPpqVIT+oGbI+uRcQP1PKoz65FxA/MEmlPpqVIT+ndJg+yhcQP/8frz6xGC0/MEmlPpqVJT9UOKI+/mIqP6d0mD6xGC0/dFylPv5iKj8g7pI+/mIqP/8frz6xGC0/qKa0Pv5iKj+ndJg+sRgtP3dLoj6alSU/IO6SPv5iKj90XKU+/mIqP6imtD7+Yio//3qVPrkXED9TyqM+yhcQP1PKoz65FxA/qBmyPrkXED9TyqM+yhcQP1PKoz65FxA/d0uiPpqVIT9TyqM+uRcQP/8frz7KFxA//3qVPrkXED//H68+sRgtP6d0mD6xGC0/VDiiPv5iKj8="),
+"format": 34359742487,
+"index_count": 162,
+"index_data": PackedByteArray("KAACABkAKAAAAAIAKAAZACkAGQAqACkAKQAqABoAKQAaACsALAAcABsALAAbABUAEQAsABUAHAAtABsAHQAtABwALgAdABwALgAeAB0AHgASAB0AHgATABIAEwAUABIAIwAwAC8AMAAIAC8AIwAvACIALwAxACIAMQAHACIAMgAjACIAIwAyADMAMgAGADMANAALAB8ACwA1AB8ANAAfAAoAIAA1AAsANgA0AAoACQA2AAoADAAJAAoANwAgAAsANwAhACAAIQANACAAIQA4AA0AOAAPAA0ADwA4ABAAOAAOABAABQA5AAEAOQAFAAMAOQA6AAEAOwA6ADkAOwAEADoAFgAYADwAFgA8AD0APQA8AD4APQA+ABcAPwBAACYAQAA/ACUAJQBBAEAAJgBAAEIAJwAmAEIAQwBEACQARABFACQA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 70,
+"vertex_data": PackedByteArray("JojqPrp0J73kzFM9D+KQvoYHPT3uQ5e+arrpPj+jGL0ocVq9LTzqvoUDOL1UQ2A9Nt+QPqz6UT1/y5Q+fJPpvn8WOb2aYGu9j+TMPqVSB75txl+9dR3NvmnUBr5yOGO9oAN5vZz89r2z4tQ+dR3NvmnUBr5yOGO9LTzqvoUDOL1UQ2A9oAN5vZz89r2z4tQ+fJPpvn8WOb2aYGu9Nt+QPqz6UT1/y5Q+j+TMPqVSB75txl+9JojqPrp0J73kzFM9arrpPj+jGL0ocVq9j+TMPqVSB75txl+9D+KQvoYHPT3uQ5e+dR3NvmnUBr5yOGO9fJPpvn8WOb2aYGu9arrpPj+jGL0ocVq9Nt+QPqz6UT1/y5Q+D+KQvoYHPT3uQ5e+JojqPrp0J73kzFM9gY2WPnB8Kz1TEZS+nF4WvdLHL73UTey+gY2WPnB8Kz1TEZS+xkRdPbTyBb5lUM++nF4WvdLHL73UTey+eNyMvpLXj73pCZG+kgmPvnKsRD1Vjpc+cu8jPUnrS73Pduw+9TOQPvRIjb3We48+eNyMvpLXj73pCZG+9TOQPvRIjb3We48+xkRdPbTyBb5lUM++cu8jPUnrS73Pduw+kgmPvnKsRD1Vjpc+LTzqvoUDOL1UQ2A95X21Pq4+eD0/yte7e3+wOj6xij0pbKu+dMZhPT9JKL2c0em+D+KQvoYHPT3uQ5e+4FGMPtaZjr0h6ZG+dMZhPT9JKL2c0em+WL0evW6MCL6JhdC+5MuQvtxeg701D5M+exYgPcG3Cr72ac0+lqfLvkLpCL7VglU94FGMPtaZjr0h6ZG+hOLUPqb89r34Ank95MuQvtxeg701D5M+jmFrvcoVOb1Zk+k+lqfLvkLpCL7VglU9exYgPcG3Cr72ac0+hOLUPqb89r34Ank9L3+1vhg+eD2Nzde77wj4tdxpiz2DNCO0avuwukOxij0ibKs+5X21Pq4+eD0/yte77wj4tdxpiz2DNCO0e3+wOj6xij0pbKu+jmFrvcoVOb1Zk+k+avuwukOxij0ibKs+Nt+QPqz6UT1/y5Q+L3+1vhg+eD2Nzde74FGMPtaZjr0h6ZG+eNyMvpLXj73pCZG+WL0evW6MCL6JhdC+SLX4w////z+PaEb0KM+MOQa8tcoMlUVDskr1w////z+3i47oi7lyRvZDs8py+YUKQVe+KP///7+9qL4o////v72oAAD///+/wSAjRv///788OZdd1JR+yORmPl+61GjEaCLBRv///7/tttttF/0Inz3fI0b///+/wcaXXdzjpO6W3cFG////vz3fI0asle1JIhLtNhf9CB/BICNGA+gqbmgiwUbc46Rult3BRtSUfUi3i47oKM+LuY9oRvSLuXLGSLX4w3L5hYpvl0b0/7//P/ZDQfnX/1dH2+3tNga/ij493xkZudRnRGgi1RbD8V9SIhLtNjn7aB4RSdttBr+LvtSWl13D8V/S7bbbbTr7aZ7kicoT////PzRs5Qlu9Tu6/3++KP///z+8hvbD1/9Wx0d0juj/v/+/skr1wwuVRcP1owncqJ78RfWj///F8iM+B7xB+U/x6z+PaEb0T/g2L9vt7TZmvp09lt3VFpPV+kTBIBkZrO8SVMqT5Ql39EfFvagAAP///7+9qL4o////vxp2yhP///8/QVe+KP///78RSdttZr6cvSppl12T1frE2zk+X6yV7MkamT5frO8R1CPGPl8D6CruCVwJ3DTX9i4AgP///7//P/9/CdwButRJ9aMJ3DTX9q4AgP///7//v/Wj//8ButPJQnn2w0/x67//fwncxvIjvreLjuhP+DevCVwJ3Kie/MUadsoTd/RHReSJyhNu9Ts6/3++KP///z8=")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ap8n"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6t7ya"]
+height = 0.4539032
+radius = 0.46240234
+
+[node name="Cheese_Slice" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_6cy4g")
+ItemHighlightMesh = NodePath("food_ingredient_cheese/MeshInstance3D")
+isIngredient = true
+Data = SubResource("Resource_qq3xu")
+
+[node name="food_ingredient_cheese" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -4.371139e-08, 0, 4.371139e-08, 1, 0, 0, 0)
+mesh = ExtResource("4_gpr2q")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="food_ingredient_cheese"]
+mesh = SubResource("ArrayMesh_1winl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7ap8n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03583622, 0.056319475, 0.03661549)
+shape = SubResource("CylinderShape3D_6t7ya")

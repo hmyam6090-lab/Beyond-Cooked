@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds55l6q5qn2a2"
+path="res://.godot/imported/A cooked patty.mp3-5e702d2cd2c9de6d6e8abf70bcb20616.mp3str"
+
+[deps]
+
+source_file="res://Assets/sfx/Voicelines/A cooked patty.mp3"
+dest_files=["res://.godot/imported/A cooked patty.mp3-5e702d2cd2c9de6d6e8abf70bcb20616.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

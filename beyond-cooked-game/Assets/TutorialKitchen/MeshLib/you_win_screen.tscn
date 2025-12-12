@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5mg7rnhsyk61"]
+
+[ext_resource type="Script" uid="uid://dxnxn38oqb7aa" path="res://Assets/TutorialKitchen/MeshLib/you_win_screen.gd" id="1_eceh0"]
+[ext_resource type="FontFile" uid="uid://xq77ko2nv4s3" path="res://Assets/UI/Avara.ttf" id="1_mt104"]
+[ext_resource type="AudioStream" uid="uid://bgrmm8vu76a81" path="res://Assets/sfx/win.mp3" id="3_krktb"]
+
+[node name="YouWinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eceh0")
+
+[node name="YouWon" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -115.0
+offset_right = 117.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mt104")
+theme_override_font_sizes/font_size = 50
+text = "You Won!"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -29.0
+offset_right = 241.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mt104")
+theme_override_font_sizes/font_size = 25
+text = "Congrats! You satisfied the daily quota!"
+
+[node name="Home" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = 29.0
+offset_right = 283.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mt104")
+theme_override_font_sizes/font_size = 30
+text = "Home"
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Win" type="AudioStreamPlayer3D" parent="SFX"]
+stream = ExtResource("3_krktb")

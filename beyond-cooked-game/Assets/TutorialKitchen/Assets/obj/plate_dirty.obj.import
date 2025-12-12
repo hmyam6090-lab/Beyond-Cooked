@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7lsbw2b5dc0h"
+path="res://.godot/imported/plate_dirty.obj-976811b236de4211b08d6bb5d62d0eeb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plate_dirty.obj-976811b236de4211b08d6bb5d62d0eeb.mesh"]
+
+source_file="res://Assets/TutorialKitchen/Assets/obj/plate_dirty.obj"
+dest_files=["res://.godot/imported/plate_dirty.obj-976811b236de4211b08d6bb5d62d0eeb.mesh", "res://.godot/imported/plate_dirty.obj-976811b236de4211b08d6bb5d62d0eeb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
