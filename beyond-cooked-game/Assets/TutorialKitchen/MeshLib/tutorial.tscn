@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cnw3thrrqewp8"]
+[gd_scene load_steps=57 format=3 uid="uid://cnw3thrrqewp8"]
 
 [ext_resource type="PackedScene" uid="uid://d233fokbrh6fq" path="res://scene_objects/InteractableItems/door.tscn" id="2_npvra"]
 [ext_resource type="ArrayMesh" uid="uid://1f3m1hl1t7n0" path="res://Assets/TutorialKitchen/Assets/obj/table_round_A.obj" id="2_oclra"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://bgaijv6n4pwvf" path="res://scene_objects/InteractableItems/order_entry.tscn" id="18_0chr4"]
 [ext_resource type="PackedScene" uid="uid://de3v8u14pfjdt" path="res://Resources/final.tscn" id="18_53fj0"]
 [ext_resource type="PackedScene" uid="uid://0gv4l8i0cdpy" path="res://scene_objects/InteractableItems/SubmitStation.tscn" id="18_f4tol"]
-[ext_resource type="PackedScene" uid="uid://bblyq8s6477ie" path="res://scene_objects/InteractableItems/tut_cube.tscn" id="18_hbw3n"]
 [ext_resource type="Texture2D" uid="uid://w5fo6cxfvg15" path="res://Assets/UI/money.png" id="18_p3ya2"]
 [ext_resource type="FontFile" uid="uid://xq77ko2nv4s3" path="res://Assets/UI/Avara.ttf" id="18_wmi3q"]
 [ext_resource type="PackedScene" uid="uid://cv6kuq8f1cief" path="res://scene_objects/InteractableItems/lever.tscn" id="20_hbw3n"]
@@ -131,6 +130,7 @@ data = PackedVector3Array(0.875, 0, -1.9, 0.59999996, 0, -1.9, 0.9, 0, -1.875, 0
 [node name="TutorialZones" type="Node3D" parent="."]
 
 [node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012524217, 0.2)
 navigation_mesh = SubResource("NavigationMesh_01dgu")
 
 [node name="WallKitchen" type="GridMap" parent="NavigationRegion3D2"]
@@ -368,7 +368,7 @@ You can interact with certain
 "
 
 [node name="PattyInstru" parent="Diegetic" instance=ExtResource("20_wmi3q")]
-transform = Transform3D(-0.39996263, 0, 0.005466256, 0, 0.4, 0, -0.005466256, 0, -0.39996263, -7.481394, -1.334014, 43.380898)
+transform = Transform3D(-1.7484554e-08, 0, -0.39999998, 0, 0.39999998, 0, 0.39999998, 0, -1.7484554e-08, 11.16625, -1.334014, 29.735199)
 
 [node name="Sprite3D" type="Sprite3D" parent="Diegetic/PattyInstru"]
 transform = Transform3D(1.0000008, 0, -1.5832484e-08, 0, 0.99999976, 0, 1.5832484e-08, 0, 1.0000008, 0.060440034, 3.4217076, 0.1901741)
@@ -391,7 +391,7 @@ transform = Transform3D(0.4999999, 0, -7.916242e-09, 0, 0.49999976, 0, 7.916242e
 texture = ExtResource("24_fyaqf")
 
 [node name="BurgerInstru" parent="Diegetic" instance=ExtResource("20_wmi3q")]
-transform = Transform3D(-0.0054662377, 0, -0.3999626, 0, 0.39999998, 0, 0.3999626, 0, -0.0054662377, 11.4191, -1.334014, 29.978867)
+transform = Transform3D(-0.39912984, 0, 0.026370287, 0, 0.39999998, 0, -0.026370287, 0, -0.39912984, -6.794808, -1.334014, 43.256615)
 
 [node name="Sprite3D" type="Sprite3D" parent="Diegetic/BurgerInstru"]
 transform = Transform3D(1.0000008, 0, -1.5832484e-08, 0, 0.99999976, 0, 1.5832484e-08, 0, 1.0000008, 0.060440034, 3.4217076, 0.1901741)
@@ -444,9 +444,6 @@ transform = Transform3D(-0.39998978, 0, -0.002848287, 0, 0.3999999, 0, 0.0028482
 [node name="Sprite3D2" type="Sprite3D" parent="Diegetic/Skelly"]
 transform = Transform3D(0.49999994, 0, -7.916242e-09, 0, 0.4999998, 0, 7.916242e-09, 0, 0.49999994, -0.51148987, 3.4467287, 0.1980133)
 texture = ExtResource("27_o4aon")
-
-[node name="RigidBody3D" parent="." instance=ExtResource("18_hbw3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -16.428923)
 
 [node name="StaticBody3D4" parent="." instance=ExtResource("20_hbw3n")]
 transform = Transform3D(0.0015117896, 0.99961734, 0.027621485, -0.008851021, -0.027607083, 0.99957967, 0.9999597, -0.0017556325, 0.008805898, -4.7438636, 2.6309893, -22.473873)
