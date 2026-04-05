@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RecipeData" load_steps=14 format=3 uid="uid://pcw77ta7nc62"]
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://pcw77ta7nc62"]
 
 [ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_2g1yw"]
 [ext_resource type="Texture2D" uid="uid://dya2jh4f7hd3t" path="res://Assets/UI/Dishes/soup.png" id="1_vxm0o"]

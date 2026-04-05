@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RecipeData" load_steps=14 format=3 uid="uid://c06cvfuj4g54g"]
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://c06cvfuj4g54g"]
 
 [ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_2ego6"]
 [ext_resource type="Texture2D" uid="uid://3m3xdpnsvxu4" path="res://Assets/UI/Dishes/burger.png" id="1_8q6kf"]

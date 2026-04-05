@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RecipeData" load_steps=8 format=3 uid="uid://cq541wqhn12c5"]
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://cq541wqhn12c5"]
 
 [ext_resource type="Texture2D" uid="uid://bhxe1qdf8fx2g" path="res://Assets/UI/Ingredients/cooked_patty.png" id="1_bg85b"]
 [ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_x583s"]

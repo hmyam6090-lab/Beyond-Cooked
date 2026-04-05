@@ -85,7 +85,7 @@ var footstep_interval_sprint := 0.28
 
 func _ready():
 	flashlight.visible = isOnFlashlight
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	##Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	self.set_meta("player", self)
 	initialize_animations()
 	

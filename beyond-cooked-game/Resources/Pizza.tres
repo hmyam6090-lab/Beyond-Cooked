@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RecipeData" load_steps=17 format=3 uid="uid://cfdlw8wbsfdwa"]
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://cfdlw8wbsfdwa"]
 
 [ext_resource type="Texture2D" uid="uid://bpm87bmvre4y6" path="res://Assets/UI/Dishes/pizza.png" id="1_7i1jm"]
 [ext_resource type="Script" uid="uid://vxwff2w70g" path="res://Inventory/ItemData.gd" id="1_rex8c"]
